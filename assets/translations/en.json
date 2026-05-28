@@ -1,0 +1,282 @@
+{
+  "app_name": "Nawirni",
+  "welcome": "Welcome",
+  "hello": "Hello",
+  "goodbye": "Goodbye",
+  
+  "common": {
+    "ok": "OK",
+    "cancel": "Cancel",
+    "yes": "Yes",
+    "no": "No",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "retry": "Retry",
+    "skip": "Skip",
+    "continue": "Continue",
+    "done": "Done",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information",
+    "search": "Search",
+    "no_results": "No results found",
+    "empty": "Empty",
+    "add": "Add",
+    "remove": "Remove",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "password": "Password",
+    "email": "Email",
+    "phone": "Phone",
+    "name": "Name",
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "username": "Username",
+    "address": "Address",
+    "city": "City",
+    "country": "Country",
+    "date": "Date",
+    "time": "Time",
+    "more": "More",
+    "less": "Less",
+    "version": "Version"
+  },
+
+  "validation": {
+    "required": "This field is required",
+    "invalid_email": "Please enter a valid email",
+    "invalid_phone": "Please enter a valid phone number",
+    "password_too_short": "Password must be at least 6 characters",
+    "passwords_dont_match": "Passwords don't match",
+    "invalid_input": "Invalid input",
+    "field_empty": "This field cannot be empty"
+  },
+
+  "auth": {
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "sign_out": "Sign Out",
+    "forgot_password": "Forgot Password?",
+    "reset_password": "Reset Password",
+    "create_account": "Create Account",
+    "already_have_account": "Already have an account?",
+    "dont_have_account": "Don't have an account?",
+    "remember_me": "Remember me",
+    "send_verification_code": "Send Verification Code",
+    "verify_email": "Verify Email",
+    "verify_phone": "Verify Phone",
+    "verification_code": "Verification Code",
+    "enter_code": "Enter verification code",
+    "resend_code": "Resend Code",
+    "code_sent": "Code sent successfully",
+    "code_expired": "Code expired",
+    "invalid_credentials": "Invalid email or password",
+    "account_created": "Account created successfully",
+    "password_reset_sent": "Password reset link sent to your email",
+    "login_success": "Logged in successfully"
+  },
+
+  "home": {
+    "title": "Home",
+    "welcome_message": "Welcome back!",
+    "featured": "Featured",
+    "popular": "Popular",
+    "trending": "Trending",
+    "recent": "Recent",
+    "view_all": "View All"
+  },
+
+  "profile": {
+    "title": "Profile",
+    "my_profile": "My Profile",
+    "edit_profile": "Edit Profile",
+    "change_password": "Change Password",
+    "privacy": "Privacy",
+    "notifications": "Notifications",
+    "preferences": "Preferences",
+    "account_settings": "Account Settings",
+    "personal_info": "Personal Information",
+    "privacy_policy": "Privacy Policy",
+    "terms_conditions": "Terms & Conditions",
+    "support": "Support",
+    "feedback": "Send Feedback",
+    "rate_app": "Rate App",
+    "delete_account": "Delete Account"
+  },
+
+  "notifications": {
+    "title": "Notifications",
+    "no_notifications": "No notifications",
+    "enable_notifications": "Enable Notifications",
+    "notification_settings": "Notification Settings",
+    "push_notifications": "Push Notifications",
+    "email_notifications": "Email Notifications",
+    "sms_notifications": "SMS Notifications",
+    "sound": "Sound",
+    "vibration": "Vibration",
+    "mark_as_read": "Mark as read",
+    "clear_all": "Clear all"
+  },
+
+  "messages": {
+    "title": "Messages",
+    "new_message": "New Message",
+    "inbox": "Inbox",
+    "sent": "Sent",
+    "compose": "Compose",
+    "reply": "Reply",
+    "no_messages": "No messages",
+    "write_message": "Write a message...",
+    "message_sent": "Message sent",
+    "conversation": "Conversation",
+    "block_user": "Block User",
+    "unblock_user": "Unblock User"
+  },
+
+  "network": {
+    "no_internet": "No internet connection",
+    "check_connection": "Please check your internet connection",
+    "server_error": "Server error",
+    "try_again": "Try Again",
+    "connection_timeout": "Connection timeout",
+    "bad_request": "Bad request",
+    "unauthorized": "Unauthorized",
+    "forbidden": "Forbidden",
+    "not_found": "Not found",
+    "something_went_wrong": "Something went wrong"
+  },
+
+  "permissions": {
+    "camera": "Camera",
+    "gallery": "Gallery",
+    "location": "Location",
+    "contacts": "Contacts",
+    "calendar": "Calendar",
+    "microphone": "Microphone",
+    "files": "Files",
+    "permission_required": "Permission required",
+    "allow": "Allow",
+    "deny": "Deny",
+    "enable_permission": "Enable permission in settings"
+  },
+
+  "dialogs": {
+    "confirm_action": "Are you sure?",
+    "confirm_delete": "Are you sure you want to delete this item?",
+    "confirm_logout": "Are you sure you want to logout?",
+    "delete_success": "Deleted successfully",
+    "update_success": "Updated successfully",
+    "operation_success": "Operation successful",
+    "operation_failed": "Operation failed"
+  },
+
+  "search": {
+    "search_here": "Search here...",
+    "recent_searches": "Recent Searches",
+    "clear_history": "Clear History",
+    "no_results_for": "No results for '@query'"
+  },
+
+  "filter": {
+    "filter": "Filter",
+    "sort": "Sort",
+    "sort_by": "Sort By",
+    "ascending": "Ascending",
+    "descending": "Descending",
+    "price": "Price",
+    "name": "Name",
+    "date": "Date",
+    "popularity": "Popularity",
+    "rating": "Rating",
+    "apply": "Apply Filters",
+    "clear_filters": "Clear Filters"
+  },
+
+  "payment": {
+    "payment": "Payment",
+    "add_card": "Add Card",
+    "card_number": "Card Number",
+    "expiry_date": "Expiry Date",
+    "cvv": "CVV",
+    "cardholder_name": "Cardholder Name",
+    "pay_now": "Pay Now",
+    "payment_method": "Payment Method",
+    "saved_cards": "Saved Cards",
+    "billing_address": "Billing Address",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "tax": "Tax",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "promo_code": "Promo Code",
+    "apply_coupon": "Apply Coupon",
+    "payment_successful": "Payment successful",
+    "payment_failed": "Payment failed"
+  },
+
+  "orders": {
+    "orders": "Orders",
+    "order_id": "Order ID",
+    "order_date": "Order Date",
+    "order_status": "Order Status",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "shipped": "Shipped",
+    "delivered": "Delivered",
+    "cancelled": "Cancelled",
+    "track_order": "Track Order",
+    "order_details": "Order Details",
+    "items": "Items",
+    "quantity": "Quantity",
+    "price": "Price"
+  },
+
+  "cart": {
+    "cart": "Cart",
+    "add_to_cart": "Add to Cart",
+    "remove_from_cart": "Remove from Cart",
+    "cart_empty": "Your cart is empty",
+    "continue_shopping": "Continue Shopping",
+    "checkout": "Checkout",
+    "quantity": "Quantity",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "proceed": "Proceed to Checkout"
+  },
+
+  "language": {
+    "language": "Language",
+    "english": "English",
+    "arabic": "العربية",
+    "change_language": "Change Language",
+    "select_language": "Select Language"
+  },
+
+  "theme": {
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "change_theme": "Change Theme"
+  },
+
+  "onboarding": {
+    "skip": "Skip",
+    "next": "Next",
+    "get_started": "Get Started",
+    "finish": "Finish"
+  }
+}

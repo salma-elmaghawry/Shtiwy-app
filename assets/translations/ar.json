@@ -1,0 +1,282 @@
+{
+  "app_name": "نورني",
+  "welcome": "أهلا وسهلا",
+  "hello": "مرحبا",
+  "goodbye": "وداعا",
+  
+  "common": {
+    "ok": "حسنا",
+    "cancel": "إلغاء",
+    "yes": "نعم",
+    "no": "لا",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "submit": "إرسال",
+    "confirm": "تأكيد",
+    "retry": "إعادة محاولة",
+    "skip": "تخطي",
+    "continue": "متابعة",
+    "done": "تم",
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "نجاح",
+    "warning": "تحذير",
+    "info": "معلومات",
+    "search": "بحث",
+    "no_results": "لم يتم العثور على نتائج",
+    "empty": "فارغ",
+    "add": "إضافة",
+    "remove": "إزالة",
+    "settings": "الإعدادات",
+    "help": "مساعدة",
+    "about": "حول",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "password": "كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "phone": "رقم الهاتف",
+    "name": "الاسم",
+    "first_name": "الاسم الأول",
+    "last_name": "الاسم الأخير",
+    "username": "اسم المستخدم",
+    "address": "العنوان",
+    "city": "المدينة",
+    "country": "الدولة",
+    "date": "التاريخ",
+    "time": "الوقت",
+    "more": "المزيد",
+    "less": "أقل",
+    "version": "الإصدار"
+  },
+
+  "validation": {
+    "required": "هذا الحقل مطلوب",
+    "invalid_email": "يرجى إدخال بريد إلكتروني صحيح",
+    "invalid_phone": "يرجى إدخال رقم هاتف صحيح",
+    "password_too_short": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
+    "passwords_dont_match": "كلمات المرور غير متطابقة",
+    "invalid_input": "إدخال غير صحيح",
+    "field_empty": "لا يمكن أن يكون هذا الحقل فارغا"
+  },
+
+  "auth": {
+    "sign_in": "تسجيل الدخول",
+    "sign_up": "إنشاء حساب",
+    "sign_out": "تسجيل الخروج",
+    "forgot_password": "هل نسيت كلمة المرور؟",
+    "reset_password": "إعادة تعيين كلمة المرور",
+    "create_account": "إنشاء حساب",
+    "already_have_account": "هل لديك حساب بالفعل؟",
+    "dont_have_account": "ليس لديك حساب؟",
+    "remember_me": "تذكرني",
+    "send_verification_code": "إرسال رمز التحقق",
+    "verify_email": "التحقق من البريد الإلكتروني",
+    "verify_phone": "التحقق من رقم الهاتف",
+    "verification_code": "رمز التحقق",
+    "enter_code": "أدخل رمز التحقق",
+    "resend_code": "إعادة إرسال الرمز",
+    "code_sent": "تم إرسال الرمز بنجاح",
+    "code_expired": "انتهت صلاحية الرمز",
+    "invalid_credentials": "بريد إلكتروني أو كلمة مرور غير صحيحة",
+    "account_created": "تم إنشاء الحساب بنجاح",
+    "password_reset_sent": "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني",
+    "login_success": "تم تسجيل الدخول بنجاح"
+  },
+
+  "home": {
+    "title": "الرئيسية",
+    "welcome_message": "أهلا بعودتك!",
+    "featured": "مميزة",
+    "popular": "شهيرة",
+    "trending": "الاتجاهات الحالية",
+    "recent": "الأخيرة",
+    "view_all": "عرض الكل"
+  },
+
+  "profile": {
+    "title": "الملف الشخصي",
+    "my_profile": "ملفي الشخصي",
+    "edit_profile": "تعديل الملف الشخصي",
+    "change_password": "تغيير كلمة المرور",
+    "privacy": "الخصوصية",
+    "notifications": "الإشعارات",
+    "preferences": "التفضيلات",
+    "account_settings": "إعدادات الحساب",
+    "personal_info": "المعلومات الشخصية",
+    "privacy_policy": "سياسة الخصوصية",
+    "terms_conditions": "الشروط والأحكام",
+    "support": "الدعم",
+    "feedback": "إرسال ملاحظات",
+    "rate_app": "تقييم التطبيق",
+    "delete_account": "حذف الحساب"
+  },
+
+  "notifications": {
+    "title": "الإشعارات",
+    "no_notifications": "لا توجد إشعارات",
+    "enable_notifications": "تفعيل الإشعارات",
+    "notification_settings": "إعدادات الإشعارات",
+    "push_notifications": "إشعارات الدفع",
+    "email_notifications": "إشعارات البريد الإلكتروني",
+    "sms_notifications": "إشعارات الرسائل النصية",
+    "sound": "الصوت",
+    "vibration": "الاهتزاز",
+    "mark_as_read": "تحديد كمقروء",
+    "clear_all": "حذف الكل"
+  },
+
+  "messages": {
+    "title": "الرسائل",
+    "new_message": "رسالة جديدة",
+    "inbox": "الوارد",
+    "sent": "المرسلة",
+    "compose": "كتابة",
+    "reply": "رد",
+    "no_messages": "لا توجد رسائل",
+    "write_message": "اكتب رسالة...",
+    "message_sent": "تم إرسال الرسالة",
+    "conversation": "محادثة",
+    "block_user": "حظر المستخدم",
+    "unblock_user": "إلغاء حظر المستخدم"
+  },
+
+  "network": {
+    "no_internet": "لا توجد اتصال بالإنترنت",
+    "check_connection": "يرجى التحقق من اتصالك بالإنترنت",
+    "server_error": "خطأ في الخادم",
+    "try_again": "حاول مرة أخرى",
+    "connection_timeout": "انتهاء وقت الاتصال",
+    "bad_request": "طلب غير صحيح",
+    "unauthorized": "غير مصرح",
+    "forbidden": "ممنوع",
+    "not_found": "لم يتم العثور عليه",
+    "something_went_wrong": "حدث خطأ ما"
+  },
+
+  "permissions": {
+    "camera": "الكاميرا",
+    "gallery": "المعرض",
+    "location": "الموقع",
+    "contacts": "جهات الاتصال",
+    "calendar": "التقويم",
+    "microphone": "الميكروفون",
+    "files": "الملفات",
+    "permission_required": "الإذن مطلوب",
+    "allow": "السماح",
+    "deny": "رفض",
+    "enable_permission": "تفعيل الإذن في الإعدادات"
+  },
+
+  "dialogs": {
+    "confirm_action": "هل أنت متأكد؟",
+    "confirm_delete": "هل أنت متأكد من أنك تريد حذف هذا العنصر؟",
+    "confirm_logout": "هل أنت متأكد من أنك تريد تسجيل الخروج؟",
+    "delete_success": "تم الحذف بنجاح",
+    "update_success": "تم التحديث بنجاح",
+    "operation_success": "العملية ناجحة",
+    "operation_failed": "فشلت العملية"
+  },
+
+  "search": {
+    "search_here": "ابحث هنا...",
+    "recent_searches": "البحث الأخير",
+    "clear_history": "حذف السجل",
+    "no_results_for": "لا توجد نتائج ل '@query'"
+  },
+
+  "filter": {
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "sort_by": "ترتيب حسب",
+    "ascending": "تصاعدي",
+    "descending": "تنازلي",
+    "price": "السعر",
+    "name": "الاسم",
+    "date": "التاريخ",
+    "popularity": "الشهرة",
+    "rating": "التقييم",
+    "apply": "تطبيق المرشحات",
+    "clear_filters": "مسح المرشحات"
+  },
+
+  "payment": {
+    "payment": "الدفع",
+    "add_card": "إضافة بطاقة",
+    "card_number": "رقم البطاقة",
+    "expiry_date": "تاريخ الانتهاء",
+    "cvv": "CVV",
+    "cardholder_name": "اسم صاحب البطاقة",
+    "pay_now": "ادفع الآن",
+    "payment_method": "طريقة الدفع",
+    "saved_cards": "البطاقات المحفوظة",
+    "billing_address": "عنوان الفاتورة",
+    "total": "الإجمالي",
+    "subtotal": "المجموع الفرعي",
+    "tax": "الضريبة",
+    "shipping": "الشحن",
+    "discount": "الخصم",
+    "promo_code": "رمز الترويج",
+    "apply_coupon": "تطبيق القسيمة",
+    "payment_successful": "تم الدفع بنجاح",
+    "payment_failed": "فشل الدفع"
+  },
+
+  "orders": {
+    "orders": "الطلبات",
+    "order_id": "رقم الطلب",
+    "order_date": "تاريخ الطلب",
+    "order_status": "حالة الطلب",
+    "pending": "قيد الانتظار",
+    "confirmed": "تم تأكيده",
+    "shipped": "تم شحنه",
+    "delivered": "تم تسليمه",
+    "cancelled": "تم إلغاؤه",
+    "track_order": "تتبع الطلب",
+    "order_details": "تفاصيل الطلب",
+    "items": "العناصر",
+    "quantity": "الكمية",
+    "price": "السعر"
+  },
+
+  "cart": {
+    "cart": "السلة",
+    "add_to_cart": "إضافة إلى السلة",
+    "remove_from_cart": "إزالة من السلة",
+    "cart_empty": "السلة فارغة",
+    "continue_shopping": "متابعة التسوق",
+    "checkout": "الدفع",
+    "quantity": "الكمية",
+    "total": "الإجمالي",
+    "subtotal": "المجموع الفرعي",
+    "proceed": "المتابعة إلى الدفع"
+  },
+
+  "language": {
+    "language": "اللغة",
+    "english": "English",
+    "arabic": "العربية",
+    "change_language": "تغيير اللغة",
+    "select_language": "اختر اللغة"
+  },
+
+  "theme": {
+    "theme": "المظهر",
+    "light": "فاتح",
+    "dark": "داكن",
+    "system": "النظام",
+    "change_theme": "تغيير المظهر"
+  },
+
+  "onboarding": {
+    "skip": "تخطي",
+    "next": "التالي",
+    "get_started": "ابدأ",
+    "finish": "انتهى"
+  }
+}
