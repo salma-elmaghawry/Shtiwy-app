@@ -1,282 +1,89 @@
 {
-  "app_name": "نورني",
-  "welcome": "أهلا وسهلا",
-  "hello": "مرحبا",
-  "goodbye": "وداعا",
-  
-  "common": {
-    "ok": "حسنا",
-    "cancel": "إلغاء",
-    "yes": "نعم",
-    "no": "لا",
-    "save": "حفظ",
-    "delete": "حذف",
-    "edit": "تعديل",
-    "close": "إغلاق",
-    "back": "رجوع",
-    "next": "التالي",
-    "previous": "السابق",
-    "submit": "إرسال",
-    "confirm": "تأكيد",
-    "retry": "إعادة محاولة",
-    "skip": "تخطي",
-    "continue": "متابعة",
-    "done": "تم",
-    "loading": "جاري التحميل...",
-    "error": "خطأ",
-    "success": "نجاح",
-    "warning": "تحذير",
-    "info": "معلومات",
-    "search": "بحث",
-    "no_results": "لم يتم العثور على نتائج",
-    "empty": "فارغ",
-    "add": "إضافة",
-    "remove": "إزالة",
-    "settings": "الإعدادات",
-    "help": "مساعدة",
-    "about": "حول",
-    "logout": "تسجيل الخروج",
+    "app_name": "نورنى",
     "login": "تسجيل الدخول",
-    "register": "إنشاء حساب",
-    "password": "كلمة المرور",
-    "email": "البريد الإلكتروني",
-    "phone": "رقم الهاتف",
-    "name": "الاسم",
-    "first_name": "الاسم الأول",
-    "last_name": "الاسم الأخير",
-    "username": "اسم المستخدم",
-    "address": "العنوان",
-    "city": "المدينة",
-    "country": "الدولة",
-    "date": "التاريخ",
-    "time": "الوقت",
-    "more": "المزيد",
-    "less": "أقل",
-    "version": "الإصدار"
-  },
-
-  "validation": {
-    "required": "هذا الحقل مطلوب",
-    "invalid_email": "يرجى إدخال بريد إلكتروني صحيح",
-    "invalid_phone": "يرجى إدخال رقم هاتف صحيح",
-    "password_too_short": "يجب أن تكون كلمة المرور 6 أحرف على الأقل",
-    "passwords_dont_match": "كلمات المرور غير متطابقة",
-    "invalid_input": "إدخال غير صحيح",
-    "field_empty": "لا يمكن أن يكون هذا الحقل فارغا"
-  },
-
-  "auth": {
-    "sign_in": "تسجيل الدخول",
-    "sign_up": "إنشاء حساب",
-    "sign_out": "تسجيل الخروج",
-    "forgot_password": "هل نسيت كلمة المرور؟",
-    "reset_password": "إعادة تعيين كلمة المرور",
-    "create_account": "إنشاء حساب",
-    "already_have_account": "هل لديك حساب بالفعل؟",
-    "dont_have_account": "ليس لديك حساب؟",
-    "remember_me": "تذكرني",
-    "send_verification_code": "إرسال رمز التحقق",
-    "verify_email": "التحقق من البريد الإلكتروني",
-    "verify_phone": "التحقق من رقم الهاتف",
-    "verification_code": "رمز التحقق",
-    "enter_code": "أدخل رمز التحقق",
-    "resend_code": "إعادة إرسال الرمز",
-    "code_sent": "تم إرسال الرمز بنجاح",
-    "code_expired": "انتهت صلاحية الرمز",
-    "invalid_credentials": "بريد إلكتروني أو كلمة مرور غير صحيحة",
-    "account_created": "تم إنشاء الحساب بنجاح",
-    "password_reset_sent": "تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني",
-    "login_success": "تم تسجيل الدخول بنجاح"
-  },
-
-  "home": {
-    "title": "الرئيسية",
-    "welcome_message": "أهلا بعودتك!",
-    "featured": "مميزة",
-    "popular": "شهيرة",
-    "trending": "الاتجاهات الحالية",
-    "recent": "الأخيرة",
-    "view_all": "عرض الكل"
-  },
-
-  "profile": {
-    "title": "الملف الشخصي",
-    "my_profile": "ملفي الشخصي",
-    "edit_profile": "تعديل الملف الشخصي",
-    "change_password": "تغيير كلمة المرور",
-    "privacy": "الخصوصية",
-    "notifications": "الإشعارات",
-    "preferences": "التفضيلات",
-    "account_settings": "إعدادات الحساب",
-    "personal_info": "المعلومات الشخصية",
-    "privacy_policy": "سياسة الخصوصية",
-    "terms_conditions": "الشروط والأحكام",
-    "support": "الدعم",
-    "feedback": "إرسال ملاحظات",
-    "rate_app": "تقييم التطبيق",
-    "delete_account": "حذف الحساب"
-  },
-
-  "notifications": {
-    "title": "الإشعارات",
-    "no_notifications": "لا توجد إشعارات",
-    "enable_notifications": "تفعيل الإشعارات",
-    "notification_settings": "إعدادات الإشعارات",
-    "push_notifications": "إشعارات الدفع",
-    "email_notifications": "إشعارات البريد الإلكتروني",
-    "sms_notifications": "إشعارات الرسائل النصية",
-    "sound": "الصوت",
-    "vibration": "الاهتزاز",
-    "mark_as_read": "تحديد كمقروء",
-    "clear_all": "حذف الكل"
-  },
-
-  "messages": {
-    "title": "الرسائل",
-    "new_message": "رسالة جديدة",
-    "inbox": "الوارد",
-    "sent": "المرسلة",
-    "compose": "كتابة",
-    "reply": "رد",
-    "no_messages": "لا توجد رسائل",
-    "write_message": "اكتب رسالة...",
-    "message_sent": "تم إرسال الرسالة",
-    "conversation": "محادثة",
-    "block_user": "حظر المستخدم",
-    "unblock_user": "إلغاء حظر المستخدم"
-  },
-
-  "network": {
-    "no_internet": "لا توجد اتصال بالإنترنت",
-    "check_connection": "يرجى التحقق من اتصالك بالإنترنت",
-    "server_error": "خطأ في الخادم",
-    "try_again": "حاول مرة أخرى",
-    "connection_timeout": "انتهاء وقت الاتصال",
-    "bad_request": "طلب غير صحيح",
-    "unauthorized": "غير مصرح",
-    "forbidden": "ممنوع",
-    "not_found": "لم يتم العثور عليه",
-    "something_went_wrong": "حدث خطأ ما"
-  },
-
-  "permissions": {
-    "camera": "الكاميرا",
-    "gallery": "المعرض",
-    "location": "الموقع",
-    "contacts": "جهات الاتصال",
-    "calendar": "التقويم",
-    "microphone": "الميكروفون",
-    "files": "الملفات",
-    "permission_required": "الإذن مطلوب",
-    "allow": "السماح",
-    "deny": "رفض",
-    "enable_permission": "تفعيل الإذن في الإعدادات"
-  },
-
-  "dialogs": {
-    "confirm_action": "هل أنت متأكد؟",
-    "confirm_delete": "هل أنت متأكد من أنك تريد حذف هذا العنصر؟",
-    "confirm_logout": "هل أنت متأكد من أنك تريد تسجيل الخروج؟",
-    "delete_success": "تم الحذف بنجاح",
-    "update_success": "تم التحديث بنجاح",
-    "operation_success": "العملية ناجحة",
-    "operation_failed": "فشلت العملية"
-  },
-
-  "search": {
-    "search_here": "ابحث هنا...",
-    "recent_searches": "البحث الأخير",
-    "clear_history": "حذف السجل",
-    "no_results_for": "لا توجد نتائج ل '@query'"
-  },
-
-  "filter": {
-    "filter": "تصفية",
-    "sort": "ترتيب",
-    "sort_by": "ترتيب حسب",
-    "ascending": "تصاعدي",
-    "descending": "تنازلي",
-    "price": "السعر",
-    "name": "الاسم",
-    "date": "التاريخ",
-    "popularity": "الشهرة",
-    "rating": "التقييم",
-    "apply": "تطبيق المرشحات",
-    "clear_filters": "مسح المرشحات"
-  },
-
-  "payment": {
-    "payment": "الدفع",
-    "add_card": "إضافة بطاقة",
-    "card_number": "رقم البطاقة",
-    "expiry_date": "تاريخ الانتهاء",
-    "cvv": "CVV",
-    "cardholder_name": "اسم صاحب البطاقة",
-    "pay_now": "ادفع الآن",
-    "payment_method": "طريقة الدفع",
-    "saved_cards": "البطاقات المحفوظة",
-    "billing_address": "عنوان الفاتورة",
-    "total": "الإجمالي",
-    "subtotal": "المجموع الفرعي",
-    "tax": "الضريبة",
-    "shipping": "الشحن",
-    "discount": "الخصم",
-    "promo_code": "رمز الترويج",
-    "apply_coupon": "تطبيق القسيمة",
-    "payment_successful": "تم الدفع بنجاح",
-    "payment_failed": "فشل الدفع"
-  },
-
-  "orders": {
-    "orders": "الطلبات",
-    "order_id": "رقم الطلب",
-    "order_date": "تاريخ الطلب",
-    "order_status": "حالة الطلب",
-    "pending": "قيد الانتظار",
-    "confirmed": "تم تأكيده",
-    "shipped": "تم شحنه",
-    "delivered": "تم تسليمه",
-    "cancelled": "تم إلغاؤه",
-    "track_order": "تتبع الطلب",
-    "order_details": "تفاصيل الطلب",
-    "items": "العناصر",
-    "quantity": "الكمية",
-    "price": "السعر"
-  },
-
-  "cart": {
-    "cart": "السلة",
-    "add_to_cart": "إضافة إلى السلة",
-    "remove_from_cart": "إزالة من السلة",
-    "cart_empty": "السلة فارغة",
-    "continue_shopping": "متابعة التسوق",
-    "checkout": "الدفع",
-    "quantity": "الكمية",
-    "total": "الإجمالي",
-    "subtotal": "المجموع الفرعي",
-    "proceed": "المتابعة إلى الدفع"
-  },
-
-  "language": {
-    "language": "اللغة",
-    "english": "English",
-    "arabic": "العربية",
-    "change_language": "تغيير اللغة",
-    "select_language": "اختر اللغة"
-  },
-
-  "theme": {
-    "theme": "المظهر",
-    "light": "فاتح",
-    "dark": "داكن",
-    "system": "النظام",
-    "change_theme": "تغيير المظهر"
-  },
-
-  "onboarding": {
-    "skip": "تخطي",
-    "next": "التالي",
-    "get_started": "ابدأ",
-    "finish": "انتهى"
-  }
+    "welcome": "أهلاً بك",
+    "auth": {
+        "errors": {
+            "something_went_wrong": "حدث خطأ ما، يرجى المحاولة لاحقاً",
+            "sign_out_failed": "فشل تسجيل الخروج",
+            "reset_password_failed": "فشل إرسال رابط استعادة كلمة المرور",
+            "invalid_credentials": "بيانات الدخول غير صحيحة",
+            "email_in_use": "هذا البريد الإلكتروني مستخدم بالفعل",
+            "rate_limit_exceeded": "محاولات كثيرة جداً. يرجى الانتظار قليلاً قبل المحاولة مرة أخرى",
+            "invalid_otp": "رمز التحقق منتهي الصلاحية أو غير صحيح",
+            "unexpected_error": "حدث خطأ غير متوقع",
+            "email_not_confirmed": "البريد الألكتروني غير مفعل"
+        },
+        "login": {
+            "title": "مرحباً بعودتك",
+            "subtitle": "سجل دخولك لمتابعة رحلة تعلمك",
+            "email_label": "البريد الإلكتروني",
+            "email_hint": "أدخل بريدك الإلكتروني",
+            "email_required": "البريد الإلكتروني مطلوب",
+            "email_invalid": "أدخل بريد إلكتروني صحيح",
+            "password_label": "كلمة المرور",
+            "password_hint": "أدخل كلمة المرور",
+            "password_required": "كلمة المرور مطلوبة",
+            "password_length": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
+            "forgot_password": "نسيت كلمة المرور؟",
+            "login_button": "تسجيل الدخول",
+            "no_account": "ليس لديك حساب؟",
+            "signup_link": "إنشاء حساب"
+        },
+        "signup": {
+            "title": "إنشاء حساب جديد",
+            "subtitle": "ابدأ رحلتك معنا اليوم",
+            "name_label": "الاسم الكامل",
+            "name_hint": "أدخل اسمك الكامل",
+            "name_required": "الاسم مطلوب",
+            "confirm_password_label": "تأكيد كلمة المرور",
+            "confirm_password_hint": "كرر كلمة المرور",
+            "password_mismatch": "كلمتا المرور غير متطابقتين",
+            "register_button": "إنشاء الحساب",
+            "already_have_account": "لديك حساب بالفعل؟",
+            "login_link": "تسجيل الدخول",
+            "role_title": "اختر نوع الحساب",
+            "role_student": "طالب",
+            "role_student_desc": "تعلم مهارات جديدة والتحق بالدورات",
+            "role_tutor": "معلم",
+            "role_tutor_desc": "شارك خبرتك ودرّس الطلاب",
+            "role_required_error": "يرجى تحديد ما إذا كنت طالباً أم معلماً"
+        },
+        "otp": {
+            "title": "تحقق من البريد الإلكتروني",
+            "subtitle": "لقد أرسلنا رمزاً مكوناً من 6 أرقام إلى {email}",
+            "code_label": "رمز التحقق",
+            "code_hint": "أدخل الرمز المكون من 6 أرقام",
+            "verify_button": "تحقق",
+            "resend_button": "إعادة إرسال الرمز",
+            "resend_in": "إعادة الإرسال خلال {seconds} ثانية",
+            "invalid_code": "رمز التحقق غير صحيح",
+            "success": "تم التحقق من البريد الإلكتروني بنجاح"
+        },
+        "password_strength": {
+            "weak": "كلمة مرور ضعيفة",
+            "medium": "كلمة مرور متوسطة",
+            "strong": "كلمة مرور قوية"
+        }
+    },
+    "student": {
+        "title": "لوحة تحكم الطالب",
+        "welcome": "مرحباً بعودتك، {name}!",
+        "my_courses": "دوراتي التعليمية",
+        "my_courses_desc": "عرض والوصول إلى الدورات المسجل بها",
+        "progress": "تقدمي الدراسي",
+        "progress_desc": "تتبع إنجازاتك التعليمية وما حققته",
+        "schedule": "جدول الحصص",
+        "schedule_desc": "تحقق من الجلسات المباشرة القادمة"
+    },
+    "instructor": {
+        "title": "لوحة تحكم المعلم",
+        "welcome": "مرحباً بعودتك، كوتش {name}!",
+        "create_course": "إنشاء دورة جديدة",
+        "create_course_desc": "صمم وانشر دورة تعليمية جديدة",
+        "my_students": "طلابي",
+        "my_students_desc": "إدارة ومساعدة الطلاب المسجلين لديك",
+        "analytics": "تحليلات الأداء",
+        "analytics_desc": "تتبع تقييماتك، التعليقات، والمبيعات"
+    }
 }
