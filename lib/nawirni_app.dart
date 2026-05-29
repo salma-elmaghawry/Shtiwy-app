@@ -24,39 +24,48 @@ class NawirniApp extends StatelessWidget {
               darkTheme: AppTheme.dark,
               themeMode: themeState.themeMode,
               debugShowCheckedModeBanner: false,
-              home: Scaffold(
-                appBar: AppBar(
-                  title: Text("app_name".tr()),
-                  actions: [
-                    IconButton(
-                      icon: const Icon(Icons.language),
-                      onPressed: () {
-                        if (context.locale.languageCode == 'en') {
-                          context.setLocale(const Locale('ar'));
-                        } else {
-                          context.setLocale(const Locale('en'));
-                        }
-                      },
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.brightness_6),
-                      onPressed: () {
-                        context.read<ThemeCubit>().toggleThemeMode();
-                      },
-                    ),
-                  ],
-                ),
-                body: Center(
-                  child: Text(
-                    "app_name".tr(),
-                    style: Theme.of(context).textTheme.displayMedium,
-                  ),
-                ),
-              ),
+              home: const _HomeView(),
             );
           },
         );
       },
+    );
+  }
+}
+
+class _HomeView extends StatelessWidget {
+  const _HomeView();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("app_name".tr()),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language),
+            onPressed: () {
+              if (context.locale.languageCode == 'en') {
+                context.setLocale(const Locale('ar'));
+              } else {
+                context.setLocale(const Locale('en'));
+              }
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.brightness_6),
+            onPressed: () {
+              context.read<ThemeCubit>().toggleThemeMode();
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Text(
+          "app_name".tr(),
+          style: Theme.of(context).textTheme.displayMedium,
+        ),
+      ),
     );
   }
 }
