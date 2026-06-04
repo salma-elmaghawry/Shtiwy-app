@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:nawirni/core/utils/app_text_styles.dart';
 import 'app_colors.dart';
 
@@ -49,6 +50,11 @@ class AppTheme {
       foregroundColor: AppColors.textPrimaryLight,
       elevation: 0,
       centerTitle: true,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
+        statusBarBrightness: Brightness.light,
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
@@ -106,6 +112,11 @@ class AppTheme {
       foregroundColor: AppColors.textPrimaryDark,
       elevation: 0,
       centerTitle: true,
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.light,
+        statusBarBrightness: Brightness.dark,
+      ),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(

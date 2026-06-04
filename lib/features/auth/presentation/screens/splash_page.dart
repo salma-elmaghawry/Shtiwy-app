@@ -1,11 +1,10 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nawirni/core/routes/routes.dart';
 import 'package:nawirni/core/utils/app_sizes.dart';
 import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:nawirni/features/auth/presentation/cubit/auth_state.dart';
 
-@RoutePage()
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -31,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
     if (state.isAuthenticated) {
       handleHomeNavigation(context, state);
     } else {
-      context.router.replace(const LoginRoute());
+      Navigator.of(context).pushReplacementNamed(Routes.login);
     }
   }
 
@@ -66,8 +65,8 @@ class _SplashPageState extends State<SplashPage> {
 
 void handleHomeNavigation(BuildContext context, AuthStates state) {
   if (state.user?.role == 'student') {
-    context.router.replace(const StudenHomeRoute());
+    Navigator.of(context).pushReplacementNamed(Routes.home);
   } else {
-    context.router.replace(const InstractorHomeRoute());
+    Navigator.of(context).pushReplacementNamed(Routes.home);
   }
 }

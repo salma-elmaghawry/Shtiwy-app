@@ -1,5 +1,6 @@
 //use getit
 import 'package:get_it/get_it.dart';
+import 'package:nawirni/core/routes/app_router.dart';
 import 'package:nawirni/core/services/supabase_service.dart';
 import 'package:nawirni/core/theme/controller/theme_cubit.dart';
 import 'package:nawirni/features/auth/data/datasource/auth_remote_datasource.dart';
@@ -15,13 +16,16 @@ Future<void> setupInjection() async {
   final sharedPreferences = await SharedPreferences.getInstance();
   getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
 
+  //Routes
+  getIt.registerLazySingleton(() => AppRouter());
+
   // Register ThemeCubit
   getIt.registerFactory<ThemeCubit>(() => ThemeCubit(getIt()));
   //services
   getIt.registerLazySingleton<SupabaseService>(() => SupabaseService());
   //=====================AuthService================
   getIt.registerLazySingleton<AuthRemoteDataSource>(
-    () => AuthRemoteDatasourceImpl(getIt()),
+    () => AuthRemoteDatasourceImpl(),
   );
 
   //Auth Repository

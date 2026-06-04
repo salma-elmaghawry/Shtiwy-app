@@ -1,7 +1,11 @@
 {
-    "app_name": "Nawirni",
+    "app_name": "SHITAWY",
     "login": "Login",
     "welcome": "Welcome",
+    "preferences": {
+        "theme_light": "Light",
+        "theme_dark": "Dark"
+    },
     "auth": {
         "errors": {
             "something_went_wrong": "Something went wrong, please try again later",
@@ -42,22 +46,21 @@
             "register_button": "Register",
             "already_have_account": "Already have an account?",
             "login_link": "Login",
+            "success": "Account created successfully",
             "role_title": "Choose Account Type",
-            "role_student": "Student",
-            "role_student_desc": "Learn new skills and access courses",
-            "role_tutor": "Tutor",
-            "role_tutor_desc": "Share your expertise and teach students",
-            "role_required_error": "Please select whether you are a Student or a Tutor"
+            "role_student": "User",
+            "role_student_desc": "Access courses and learning materials",
+            "role_tutor": "Manager",
+            "role_tutor_desc": "Manage courses and content",
+            "role_required_error": "Please select whether you are a User or a Manager"
         },
         "otp": {
             "title": "Email Verification",
-            "subtitle": "We've sent a 6-digit code to {email}",
-            "code_label": "Verification Code",
-            "code_hint": "Enter 6-digit code",
+            "subtitle": "We've sent an 8-digit code to verify your email",
             "verify_button": "Verify",
-            "resend_button": "Resend Code",
-            "resend_in": "Resend in {seconds}s",
-            "invalid_code": "Invalid verification code",
+            "resend": "Resend Code",
+            "didnt_receive": "Didn't receive code?",
+            "invalid_otp": "Please enter a valid 8-digit verification code",
             "success": "Email verified successfully"
         },
         "password_strength": {

@@ -1,31 +1,101 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
+import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:nawirni/main.dart';
+import 'package:nawirni/core/error_handling/failures.dart';
+import 'package:nawirni/core/theme/controller/theme_cubit.dart';
+import 'package:nawirni/features/auth/domain/entities/user.dart';
+import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:nawirni/features/auth/repository/auth_repository.dart';
 import 'package:nawirni/nawirni_app.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const NawirniApp());
+  TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  setUpAll(() async {
+    SharedPreferences.setMockInitialValues({});
+    await EasyLocalization.ensureInitialized();
+  });
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+  setUp(() {
+    SharedPreferences.setMockInitialValues({});
+  });
+
+  testWidgets('renders the app shell', (tester) async {
+    final sharedPreferences = await SharedPreferences.getInstance();
+
+    await tester.pumpWidget(
+      EasyLocalization(
+        fallbackLocale: const Locale('en'),
+        supportedLocales: const [Locale('en'), Locale('ar')],
+        path: 'assets/translations',
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider<ThemeCubit>(
+              create: (_) => ThemeCubit(sharedPreferences),
+            ),
+            BlocProvider<AuthCubit>(
+              create: (_) => AuthCubit(_FakeAuthRepository()),
+            ),
+          ],
+          child: const ShtiwyApp(),
+        ),
+      ),
+    );
+
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.byIcon(Icons.school_rounded), findsOneWidget);
+
+    await tester.pump(const Duration(seconds: 2));
+    await tester.pumpAndSettle();
   });
+}
+
+class _FakeAuthRepository implements AuthRepository {
+  static const _failure = UnexpectedFailure(message: 'Not implemented in test');
+
+  @override
+  Stream<bool> authStateChanges() => const Stream<bool>.empty();
+
+  @override
+  User? getCurrentUser() => null;
+
+  @override
+  Future<Either<Failure, void>> resendOTP({required String email}) async {
+    return left(_failure);
+  }
+
+  @override
+  Future<Either<Failure, User>> signIn({
+    required String email,
+    required String password,
+  }) async {
+    return left(_failure);
+  }
+
+  @override
+  Future<Either<Failure, void>> signOut() async {
+    return right(null);
+  }
+
+  @override
+  Future<Either<Failure, User>> signUp({
+    required String email,
+    required String password,
+    required String name,
+    required String role,
+  }) async {
+    return left(_failure);
+  }
+
+  @override
+  Future<Either<Failure, User>> verifyOTP({
+    required String email,
+    required String token,
+  }) async {
+    return left(_failure);
+  }
 }

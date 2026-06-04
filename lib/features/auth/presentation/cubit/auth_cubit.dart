@@ -1,10 +1,7 @@
-import 'dart:math';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nawirni/core/bloc/base_bloc.dart';
 import 'package:nawirni/features/auth/presentation/cubit/auth_state.dart';
 import 'package:nawirni/features/auth/repository/auth_repository.dart';
-
 
 class AuthCubit extends Cubit<AuthStates> {
   final AuthRepository _authRepository;
@@ -133,19 +130,23 @@ class AuthCubit extends Cubit<AuthStates> {
   Future<void> checkAuthStatus() async {
     final user = _authRepository.getCurrentUser();
     if (user != null) {
-      emit(state.copyWith(
-        status: Status.success,
-        user: user,
-        isAuthenticated: true,
-        isEmailVerified: user.isEmailVerified,
-      ));
+      emit(
+        state.copyWith(
+          status: Status.success,
+          user: user,
+          isAuthenticated: true,
+          isEmailVerified: user.isEmailVerified,
+        ),
+      );
     } else {
-      emit(state.copyWith(
-        status: Status.initial,
-        user: null,
-        isAuthenticated: false,
-        isEmailVerified: false,
-      ));
+      emit(
+        state.copyWith(
+          status: Status.initial,
+          user: null,
+          isAuthenticated: false,
+          isEmailVerified: false,
+        ),
+      );
     }
   }
 }

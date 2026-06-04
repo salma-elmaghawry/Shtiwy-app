@@ -7,7 +7,6 @@ import 'package:nawirni/core/services/supabase_service.dart';
 import 'package:nawirni/core/theme/controller/theme_cubit.dart';
 import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:nawirni/nawirni_app.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,9 +23,11 @@ void main() async {
       child: MultiBlocProvider(
         providers: [
           BlocProvider<ThemeCubit>(create: (context) => getIt<ThemeCubit>()),
-          BlocProvider<AuthCubit>(create: (context) => getIt<AuthCubit>()..checkAuthStatus()),
+          BlocProvider<AuthCubit>(
+            create: (context) => getIt<AuthCubit>()..checkAuthStatus(),
+          ),
         ],
-        child: const NawirniApp(),
+        child: const ShtiwyApp(),
       ),
     ),
   );

@@ -1,7 +1,11 @@
 {
-    "app_name": "نورنى",
+    "app_name": "شتاوي",
     "login": "تسجيل الدخول",
     "welcome": "أهلاً بك",
+    "preferences": {
+        "theme_light": "فاتح",
+        "theme_dark": "داكن"
+    },
     "auth": {
         "errors": {
             "something_went_wrong": "حدث خطأ ما، يرجى المحاولة لاحقاً",
@@ -42,22 +46,21 @@
             "register_button": "إنشاء الحساب",
             "already_have_account": "لديك حساب بالفعل؟",
             "login_link": "تسجيل الدخول",
+            "success": "تم إنشاء الحساب بنجاح",
             "role_title": "اختر نوع الحساب",
-            "role_student": "طالب",
-            "role_student_desc": "تعلم مهارات جديدة والتحق بالدورات",
-            "role_tutor": "معلم",
-            "role_tutor_desc": "شارك خبرتك ودرّس الطلاب",
-            "role_required_error": "يرجى تحديد ما إذا كنت طالباً أم معلماً"
+            "role_student": "مستخدم",
+            "role_student_desc": "الوصول إلى الدورات والمواد التعليمية",
+            "role_tutor": "مدير",
+            "role_tutor_desc": "إدارة الدورات والمحتوى",
+            "role_required_error": "يرجى تحديد ما إذا كنت مستخدماً أم مديراً"
         },
         "otp": {
-            "title": "تحقق من البريد الإلكتروني",
-            "subtitle": "لقد أرسلنا رمزاً مكوناً من 6 أرقام إلى {email}",
-            "code_label": "رمز التحقق",
-            "code_hint": "أدخل الرمز المكون من 6 أرقام",
-            "verify_button": "تحقق",
-            "resend_button": "إعادة إرسال الرمز",
-            "resend_in": "إعادة الإرسال خلال {seconds} ثانية",
-            "invalid_code": "رمز التحقق غير صحيح",
+            "title": "التحقق من البريد الإلكتروني",
+            "subtitle": "لقد أرسلنا رمز تحقق من 8 أرقام",
+            "verify_button": "التحقق",
+            "resend": "إعادة إرسال الرمز",
+            "didnt_receive": "لم تستقبل الرمز؟",
+            "invalid_otp": "يرجى إدخال رمز تحقق صحيح من 8 أرقام",
             "success": "تم التحقق من البريد الإلكتروني بنجاح"
         },
         "password_strength": {
