@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:shtiwy/core/routes/routes.dart';
-import 'package:shtiwy/features/auth/presentation/screens/splash_page.dart';
+import 'package:shtiwy/features/intro/choose_theme_lang.dart';
+import 'package:shtiwy/features/intro/splash_page.dart';
+import 'package:shtiwy/features/intro/onboarding_page.dart';
+import 'package:shtiwy/features/settings/presentation/screens/settings_screen.dart';
 import 'package:shtiwy/features/auth/presentation/screens/login_page.dart';
 import 'package:shtiwy/features/auth/presentation/screens/sign_up_page.dart';
 import 'package:shtiwy/features/auth/presentation/screens/otp_screen.dart';
@@ -11,6 +14,12 @@ class AppRouter {
     switch (settings.name) {
       case Routes.splash:
         return MaterialPageRoute(builder: (_) => const SplashPage());
+      case Routes.onboarding:
+        return MaterialPageRoute(builder: (_) => const OnboardingPage());
+      case Routes.languageSelection:
+        return MaterialPageRoute(
+          builder: (_) => const LanguageThemeSelectionPage(),
+        );
       case Routes.login:
         return MaterialPageRoute(builder: (_) => const LoginPage());
       case Routes.signUp:

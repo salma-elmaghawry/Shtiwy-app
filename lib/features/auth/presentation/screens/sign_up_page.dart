@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shtiwy/core/helpers/app_validatore.dart';
 import 'package:shtiwy/core/routes/routes.dart';
 import 'package:shtiwy/core/utils/app_sizes.dart';
-import 'package:shtiwy/core/widgets/app_header_controls.dart';
 import 'package:shtiwy/core/widgets/custom_text_field.dart';
 import 'package:shtiwy/core/widgets/custom_button.dart';
 import 'package:shtiwy/core/widgets/loading_overlay.dart';
@@ -68,11 +67,11 @@ class _SignUpPageState extends State<SignUpPage> {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
-            appBar: _buildAppBar(context),
+          
             body: SingleChildScrollView(
               padding: EdgeInsets.symmetric(
-                horizontal: AppSizes.l,
-                vertical: AppSizes.m,
+                horizontal: AppSizes.l24,
+                vertical: AppSizes.m16,
               ),
               child: Form(
                 key: _formKey,
@@ -80,14 +79,14 @@ class _SignUpPageState extends State<SignUpPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const _SignUpHeader(),
-                    SizedBox(height: AppSizes.xxl),
+                    SizedBox(height: AppSizes.xxl48),
                     _SignUpFormFields(
                       nameController: _nameController,
                       emailController: _emailController,
                       passwordController: _passwordController,
                       confirmPasswordController: _confirmPasswordController,
                     ),
-                    SizedBox(height: AppSizes.m),
+                    SizedBox(height: AppSizes.m16),
                     RoleSelectionSection(
                       selectedRole: _selectedRole,
                       showRoleError: _showRoleError,
@@ -98,13 +97,13 @@ class _SignUpPageState extends State<SignUpPage> {
                         });
                       },
                     ),
-                    SizedBox(height: AppSizes.l),
+                    SizedBox(height: AppSizes.l24),
                     CustomButton(
                       text: 'auth.signup.register_button'.tr(),
                       onPressed: state.isLoading ? null : _handleRegister,
                     ),
                     const _LoginSection(),
-                    SizedBox(height: AppSizes.l),
+                    SizedBox(height: AppSizes.l24),
                   ],
                 ),
               ),
@@ -136,14 +135,6 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 }
 
-PreferredSizeWidget _buildAppBar(BuildContext context) {
-  return AppBar(
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-    iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-    actions: const [AppHeaderControls(showTheme: false)],
-  );
-}
 
 class _SignUpHeader extends StatelessWidget {
   const _SignUpHeader();
@@ -161,7 +152,7 @@ class _SignUpHeader extends StatelessWidget {
           ).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.bold),
         ),
 
-        SizedBox(height: AppSizes.s),
+        SizedBox(height: AppSizes.s8),
 
         Text(
           'auth.signup.subtitle'.tr(),
@@ -200,7 +191,7 @@ class _SignUpFormFields extends StatelessWidget {
           prefixIcon: const Icon(Icons.person_outline),
         ),
 
-        SizedBox(height: AppSizes.m),
+        SizedBox(height: AppSizes.m16),
 
         CustomTextField(
           controller: emailController,
@@ -211,7 +202,7 @@ class _SignUpFormFields extends StatelessWidget {
           liveValidation: true,
         ),
 
-        SizedBox(height: AppSizes.m),
+        SizedBox(height: AppSizes.m16),
 
         CustomTextField(
           controller: passwordController,
@@ -227,7 +218,7 @@ class _SignUpFormFields extends StatelessWidget {
           showPasswordStrength: true,
         ),
 
-        SizedBox(height: AppSizes.m),
+        SizedBox(height: AppSizes.m16),
 
         CustomTextField(
           controller: confirmPasswordController,

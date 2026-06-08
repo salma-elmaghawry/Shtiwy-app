@@ -89,4 +89,22 @@
         "analytics": "Performance Analytics",
         "analytics_desc": "Track your ratings, feedback, and sales"
     }
+    ,
+    "onboarding": {
+        "skip": "Skip",
+        "next": "Next",
+        "get_started": "Get Started",
+        "screen1": {
+            "title": "Discover New Destinations",
+            "desc": "Explore top travel destinations around the world and find places and experiences that fit your travel style and interests."
+        },
+        "screen2": {
+            "title": "Book With Ease",
+            "desc": "Book your trips and travel services quickly and securely with the best options and deals."
+        },
+        "screen3": {
+            "title": "Your Trip, Perfectly Planned",
+            "desc": "Manage bookings, organize your trip plans, and enjoy a smooth travel experience with Shtiwy every step of the way."
+        }
+    }
 }

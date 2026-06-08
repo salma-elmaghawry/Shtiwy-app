@@ -89,7 +89,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 : AppColors.textPrimaryLight,
           ),
         ),
-        SizedBox(height: AppSizes.xs),
+        SizedBox(height: AppSizes.xs4),
       ],
     );
   }
@@ -120,8 +120,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         filled: true,
         fillColor: isDark ? AppColors.surfaceDark : AppColors.grey100,
         contentPadding: EdgeInsets.symmetric(
-          horizontal: AppSizes.m,
-          vertical: AppSizes.s,
+          horizontal: AppSizes.m16,
+          vertical: AppSizes.s8,
         ),
         border: _buildBorder(theme),
         enabledBorder: _buildBorder(theme),
@@ -168,7 +168,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
     final strengthText = _getStrengthText(strength);
 
     return Padding(
-      padding: EdgeInsets.only(top: AppSizes.s),
+      padding: EdgeInsets.only(top: AppSizes.s8),
       child: Row(
         children: [
           Expanded(
@@ -182,7 +182,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               ),
             ),
           ),
-          SizedBox(width: AppSizes.s),
+          SizedBox(width: AppSizes.s8),
           Text(
             strengthText,
             style: theme.textTheme.bodySmall?.copyWith(
@@ -197,21 +197,21 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   OutlineInputBorder _buildBorder(ThemeData theme) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSizes.rM),
+      borderRadius: BorderRadius.circular(AppSizes.rM12),
       borderSide: BorderSide.none,
     );
   }
 
   OutlineInputBorder _buildFocusedBorder(ThemeData theme) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSizes.rM),
+      borderRadius: BorderRadius.circular(AppSizes.rM12),
       borderSide: BorderSide(color: theme.colorScheme.primary, width: 1.5),
     );
   }
 
   OutlineInputBorder _buildErrorBorder(ThemeData theme) {
     return OutlineInputBorder(
-      borderRadius: BorderRadius.circular(AppSizes.rM),
+      borderRadius: BorderRadius.circular(AppSizes.rM12),
       borderSide: BorderSide(color: theme.colorScheme.error, width: 1.5),
     );
   }

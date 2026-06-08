@@ -32,7 +32,7 @@ class RoleSelectionSection extends StatelessWidget {
           ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
         ),
 
-        SizedBox(height: AppSizes.s),
+        SizedBox(height: AppSizes.s8),
 
         Row(
           children: [
@@ -48,7 +48,7 @@ class RoleSelectionSection extends StatelessWidget {
               ),
             ),
 
-            SizedBox(width: AppSizes.m),
+            SizedBox(width: AppSizes.m16),
 
             Expanded(
               child: RoleCard(
@@ -66,7 +66,7 @@ class RoleSelectionSection extends StatelessWidget {
 
         if (showRoleError)
           Padding(
-            padding: EdgeInsets.only(top: AppSizes.s, left: AppSizes.s),
+            padding: EdgeInsets.only(top: AppSizes.s8, left: AppSizes.s8),
 
             child: Text(
               'auth.signup.role_required_error'.tr(),
@@ -114,14 +114,14 @@ class RoleCard extends StatelessWidget {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 250),
 
-        padding: EdgeInsets.all(AppSizes.m),
+        padding: EdgeInsets.all(AppSizes.m16),
 
         decoration: BoxDecoration(
           color: isSelected
               ? primaryColor.withValues(alpha: isDark ? 0.15 : 0.05)
               : (isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
 
-          borderRadius: BorderRadius.circular(AppSizes.rM),
+          borderRadius: BorderRadius.circular(AppSizes.rM12),
 
           border: Border.all(
             color: isSelected
@@ -148,14 +148,14 @@ class RoleCard extends StatelessWidget {
           children: [
             Icon(
               icon,
-              size: AppSizes.iconXL,
+              size: AppSizes.iconXL48,
 
               color: isSelected
                   ? primaryColor
                   : (isDark ? Colors.grey[400] : Colors.grey[600]),
             ),
 
-            SizedBox(height: AppSizes.s),
+            SizedBox(height: AppSizes.s8),
 
             Text(
               title,
@@ -167,7 +167,7 @@ class RoleCard extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: AppSizes.xs),
+            SizedBox(height: AppSizes.xs4),
 
             Text(
               subtitle,

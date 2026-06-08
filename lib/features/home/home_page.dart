@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shtiwy/core/routes/routes.dart';
-import 'package:shtiwy/core/widgets/app_header_controls.dart';
 import 'package:shtiwy/core/widgets/loading_overlay.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
@@ -29,19 +28,6 @@ class HomeScreen extends StatelessWidget {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
-            appBar: AppBar(
-              title: const Text('Home'),
-              actions: [
-                const AppHeaderControls(showLanguage: false),
-                IconButton(
-                  tooltip: 'Sign out',
-                  onPressed: state.isLoading
-                      ? null
-                      : () => context.read<AuthCubit>().signOut(),
-                  icon: const Icon(Icons.logout),
-                ),
-              ],
-            ),
             body: const Center(child: Text('Welcome to Shtiwy')),
           ),
         );

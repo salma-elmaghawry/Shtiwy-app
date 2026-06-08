@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shtiwy/core/routes/routes.dart';
 import 'package:shtiwy/core/utils/app_sizes.dart';
-import 'package:shtiwy/core/widgets/app_header_controls.dart';
 import 'package:shtiwy/core/widgets/custom_button.dart';
 import 'package:shtiwy/core/widgets/loading_overlay.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
@@ -56,17 +55,12 @@ class _OtpScreenState extends State<OtpScreen> {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-              actions: const [AppHeaderControls(showTheme: false)],
-            ),
+          
             body: Center(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(
-                  horizontal: AppSizes.l,
-                  vertical: AppSizes.m,
+                  horizontal: AppSizes.l24,
+                  vertical: AppSizes.m16,
                 ),
                 child: Form(
                   key: _formKey,
@@ -79,7 +73,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         style: Theme.of(context).textTheme.displaySmall
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: AppSizes.m),
+                      SizedBox(height: AppSizes.m16),
                       Text(
                         'auth.otp.subtitle'.tr(),
                         textAlign: TextAlign.center,
@@ -87,7 +81,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           context,
                         ).textTheme.bodyMedium?.copyWith(color: Colors.grey),
                       ),
-                      SizedBox(height: AppSizes.xxl),
+                      SizedBox(height: AppSizes.xxl48),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: List.generate(
@@ -113,14 +107,14 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                         ),
                       ),
-                      SizedBox(height: AppSizes.xxl),
+                      SizedBox(height: AppSizes.xxl48),
                       CustomButton(
                         text: 'auth.otp.verify_button'.tr(),
                         onPressed: state.isLoading
                             ? null
                             : () => _handleVerifyOtp(context, email),
                       ),
-                      SizedBox(height: AppSizes.l),
+                      SizedBox(height: AppSizes.l24),
                       Wrap(
                         alignment: WrapAlignment.center,
                         crossAxisAlignment: WrapCrossAlignment.center,
