@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nawirni/core/utils/app_sizes.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
 
-enum ButtonVariant { primary, secondary, tertiary, outlined, text }
+enum ButtonVariant { primary, secondary, tertiary, outlined, text, icon }
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -12,6 +12,7 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final Widget? icon;
   final bool isDisabled;
+  final double? borderRadius;
 
   const CustomButton({
     super.key,
@@ -23,21 +24,23 @@ class CustomButton extends StatelessWidget {
     this.height,
     this.icon,
     this.isDisabled = false,
+    this.borderRadius,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return SizedBox(
       width: width ?? double.infinity,
-      height: height ?? AppSizes.buttonHeightM,
+      height: height ?? AppSizes.buttonHeightM48,
       child: _buildButton(theme),
     );
   }
 
   Widget _buildButton(ThemeData theme) {
-    
+    final radius = borderRadius ?? AppSizes.rM12;
+
     switch (variant) {
       case ButtonVariant.primary:
         return ElevatedButton(
@@ -45,27 +48,39 @@ class CustomButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: theme.colorScheme.primary,
             foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
           ),
           child: _buildContent(Colors.white),
         );
+
       case ButtonVariant.secondary:
         return ElevatedButton(
           onPressed: (isLoading || isDisabled) ? null : onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: theme.colorScheme.secondary,
             foregroundColor: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
           ),
           child: _buildContent(Colors.white),
         );
+
       case ButtonVariant.tertiary:
         return ElevatedButton(
           onPressed: (isLoading || isDisabled) ? null : onPressed,
           style: ElevatedButton.styleFrom(
             backgroundColor: theme.colorScheme.tertiary,
             foregroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
           ),
           child: _buildContent(Colors.black),
         );
+
       case ButtonVariant.outlined:
         return OutlinedButton(
           onPressed: (isLoading || isDisabled) ? null : onPressed,
@@ -73,16 +88,46 @@ class CustomButton extends StatelessWidget {
             side: BorderSide(color: theme.colorScheme.primary),
             foregroundColor: theme.colorScheme.primary,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(AppSizes.rM),
+              borderRadius: BorderRadius.circular(radius),
             ),
           ),
           child: _buildContent(theme.colorScheme.primary),
         );
+
+      case ButtonVariant.icon:
+        return OutlinedButton(
+          onPressed: (isLoading || isDisabled) ? null : onPressed,
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(color: theme.colorScheme.primary),
+            foregroundColor: theme.colorScheme.primary,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          ),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(text, style: TextStyle(color: theme.colorScheme.primary)),
+              if (icon != null) ...[
+                const SizedBox(width: 8),
+                IconTheme(
+                  data: IconThemeData(color: theme.colorScheme.primary),
+                  child: icon!,
+                ),
+              ],
+            ],
+          ),
+        );
+
       case ButtonVariant.text:
         return TextButton(
           onPressed: (isLoading || isDisabled) ? null : onPressed,
           style: TextButton.styleFrom(
             foregroundColor: theme.colorScheme.primary,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(radius),
+            ),
           ),
           child: _buildContent(theme.colorScheme.primary),
         );
@@ -103,12 +148,9 @@ class CustomButton extends StatelessWidget {
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
+
       children: [
-        if (icon != null) ...[
-          icon!,
-          SizedBox(width: AppSizes.s),
-        ],
+        if (icon != null) ...[icon!, SizedBox(width: AppSizes.s8)],
         Text(text),
       ],
     );

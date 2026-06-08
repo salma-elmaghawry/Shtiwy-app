@@ -1,4 +1,4 @@
-import 'package:nawirni/features/auth/domain/entities/user.dart';
+import 'package:shtiwy/features/auth/domain/entities/user.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as supabase;
 
 class UserModel extends User {
@@ -56,5 +56,6 @@ class UserModel extends User {
       role: role ?? this.role,
     );
   }
+
   User toEntity() => this;
 }

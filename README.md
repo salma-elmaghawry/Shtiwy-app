@@ -1,10 +1,83 @@
-# Nawirni: Your Study, Your Way, Powered by AI
+# Shtiwy (nawirni)
 
-**Nawirni** is an innovative AI-powered study companion mobile application designed to revolutionize personalized learning. Whether you're a student looking to improve your grades, a professional developing new skills, or a lifelong learner, Nawirni adapts to your unique learning style and pace.
+A Flutter application (client) — local modifications for onboarding, language & theme selection, and developer flow.
 
-## About Nawirni
+**Quick Start**
 
-Nawirni combines cutting-edge artificial intelligence with intuitive design to create a personalized study experience tailored to each user. Our mission is to empower learners by providing adaptive content, intelligent recommendations, and interactive study tools that make learning more effective and engaging.
+- **Install dependencies:**
+
+  ```bash
+  flutter pub get
+  ```
+
+- **Run the app (debug):**
+
+  ```bash
+  flutter run
+  ```
+
+- **Static analysis:**
+
+  ```bash
+  flutter analyze
+  ```
+
+**Dev flow (what you'll see in debug builds)**
+
+- The app is configured to show the selection flow in debug mode to make testing easier:
+  - Splash → Language & Theme selection → Onboarding → Login/Home
+- The production behaviour (release mode) uses persisted preferences (see `SharedPreferences` keys below).
+
+**What I added / changed (high level)**
+
+- Updated localization keys in `assets/translations/en.json` and `assets/translations/ar.json` (app name, onboarding strings).
+- Added a 3-page onboarding screen (`lib/features/intro/onboarding_page.dart`) and route registration.
+- Implemented `LanguageThemeSelectionPage` (`lib/features/intro/choose_theme_lang.dart`) allowing the user to pick language and theme.
+- Persisted selections in `SharedPreferences` and wired them to `EasyLocalization` and `ThemeCubit`.
+- Added `SettingsScreen` with a toggle to open the selection screen and to optionally show the selector every startup.
+- Normalized package import paths to `package:shtiwy` and renamed app entry to `shtiwy_app.dart`.
+- Added a configurable `borderRadius` and `icon` variant to `CustomButton` (`lib/core/widgets/custom_button.dart`).
+
+**Important files & routes**
+
+- `lib/main.dart` — app bootstrap, initializes `EasyLocalization`, DI (`getIt`) and `ThemeCubit`/`AuthCubit`.
+- `lib/shtiwy_app.dart` — `MaterialApp` configuration (`initialRoute`, theme, localization delegates).
+- `lib/core/routes/routes.dart` — route constants (e.g. `Routes.splash`, `Routes.languageSelection`, `Routes.onboarding`).
+- `lib/core/routes/app_router.dart` — route -> page mapping.
+- `lib/features/intro/choose_theme_lang.dart` — language & theme selection screen (saves `app_locale` and persists theme).
+- `lib/features/intro/onboarding_page.dart` — onboarding PageView; sets `onboarding_seen` when skipped/finished.
+- `lib/features/settings/presentation/screens/settings_screen.dart` — simple Settings screen with a toggle to show selection at startup and a button to edit language/theme.
+- `lib/core/widgets/custom_button.dart` — custom button with `borderRadius` and `icon` variant (use `ButtonVariant.icon`).
+
+**SharedPreferences keys**
+
+- `app_locale` — saved language code (`"en"` or `"ar"`).
+- `app_theme_mode` — saved theme mode (stringified `ThemeMode`).
+- `onboarding_seen` — boolean, set true when onboarding is finished or skipped.
+- `choose_every_time` — boolean, from Settings screen; when true you may choose to show selection every app start (not yet forced by splash in release).
+
+**Developer notes**
+
+- In debug builds the splash forces the language/theme selection screen to appear first. This is controlled by `kDebugMode` in `SplashPage`.
+- The selection screen applies locale via `context.setLocale(...)` and applies theme via `ThemeCubit`. The theme changes are persisted by `ThemeCubit`.
+- To test the full first-launch flow quickly: run the app in the simulator, then clear app data (or run with a fresh simulator), the debug flow will present the selection → onboarding → login sequence.
+
+**Lint / Analyzer**
+
+- I ran `flutter analyze` while implementing features. Remaining messages are informational (unused imports in helper files and a couple of deprecation/info warnings). They don't block running the app.
+
+**Next suggested steps**
+
+- Localize the Settings page labels into `assets/translations/en.json` and `assets/translations/ar.json`.
+- Optionally wire `SettingsScreen` into the `AppRouter` and add a navbar entry in `HomeScreen`.
+- Remove or tidy unused imports flagged by the analyzer.
+
+If you want, I can do any of these next steps and also run and verify the flow on an emulator. Which one should I do next?
+# Shitawy
+
+**Shitawy**
+
+اداره رحلات الحج والعمره وكده
 
 ### Key Features
 
@@ -54,7 +127,7 @@ lib/
 │   └── error_handling/ # Error handling utilities
 ├── features/           # Feature-specific modules
 ├── main.dart          # App entry point
-└── nawirni_app.dart   # App configuration
+└── shitawy_app.dart   # App configuration
 ```
 
 ## Technology Stack
@@ -73,7 +146,8 @@ lib/
 
 ## Architecture
 
-Nawirni follows the **Clean Architecture** principles with **BLoC** pattern for state management, ensuring:
+
+Shitawy follows the **Clean Architecture** principles with **BLoC** pattern for state management, ensuring:
 
 - Separation of concerns
 - Testability
@@ -91,7 +165,7 @@ Nawirni follows the **Clean Architecture** principles with **BLoC** pattern for 
 
 ## Localization
 
-Nawirni supports multiple languages:
+Shitawy supports multiple languages:
 - 🇬🇧 English
 - 🇸🇦 العربية (Arabic)
 
@@ -111,7 +185,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-For support, please open an issue on GitHub or contact us at support@nawirni.com
+For support, please open an issue on GitHub or contact us at support@shitawy.com
 
 ## Acknowledgments
 
@@ -121,4 +195,4 @@ For support, please open an issue on GitHub or contact us at support@nawirni.com
 
 ---
 
-**Nawirni**: Your Study, Your Way, Powered by AI.
+**Shitawy**: اداره رحلات الحج والعمره وكده
