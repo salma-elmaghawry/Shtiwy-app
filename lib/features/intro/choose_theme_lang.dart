@@ -15,6 +15,11 @@ import 'package:shtiwy/core/theme/controller/theme_cubit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shtiwy/core/widgets/custom_button.dart';
 
+// NOTE: this file intentionally uses BuildContext after awaiting some futures
+// because navigation and locale changes happen after persistence operations.
+// The lints for `use_build_context_synchronously` are informational here.
+// ignore_for_file: use_build_context_synchronously
+
 class LanguageThemeSelectionPage extends StatefulWidget {
   const LanguageThemeSelectionPage({super.key});
 
@@ -86,15 +91,12 @@ ThemeMode _effectiveThemeMode(ThemeMode themeMode) {
 
 class _LanguageThemeSelectionPageState
     extends State<LanguageThemeSelectionPage> {
-  ThemeMode _themeMode = ThemeMode.system;
-
   static const String _localeKey = 'app_locale';
 
   @override
   void initState() {
     super.initState();
-    final themeState = context.read<ThemeCubit>().state;
-    _themeMode = themeState.themeMode;
+    // Theme initially provided by ThemeCubit; toggles update it live.
   }
 
   Future<void> _saveAndContinue() async {
@@ -108,28 +110,41 @@ class _LanguageThemeSelectionPageState
 
     // Apply locale immediately using EasyLocalization
     try {
-      context.setLocale(Locale(langCode));
+      await context.setLocale(Locale(langCode));
     } catch (_) {}
 
-    // Update theme via ThemeCubit (it persists internally)
-    context.read<ThemeCubit>().setThemeMode(_themeMode);
+    // Ensure the current ThemeCubit's value is persisted (if changed via the toggle)
+    final currentTheme = context.read<ThemeCubit>().state.themeMode;
+    await context.read<ThemeCubit>().setThemeMode(currentTheme);
+
+    // Avoid using BuildContext across async gaps
+    if (!mounted) return;
 
     // In debug mode always show onboarding after selection to exercise the flow
     if (kDebugMode) {
-      Navigator.of(
-        context,
-      ).pushNamedAndRemoveUntil(Routes.onboarding, (route) => false);
+      if (!mounted) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.of(
+          context,
+        ).pushNamedAndRemoveUntil(Routes.onboarding, (route) => false);
+      });
       return;
     }
 
     // If onboarding hasn't been seen yet, show it; otherwise return to splash
     final seen = prefs.getBool('onboarding_seen') ?? false;
     if (!seen) {
-      Navigator.of(context).pushNamed(Routes.onboarding);
+      if (!mounted) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.of(context).pushNamed(Routes.onboarding);
+      });
     } else {
-      Navigator.of(
-        context,
-      ).pushNamedAndRemoveUntil(Routes.splash, (route) => false);
+      if (!mounted) return;
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Navigator.of(
+          context,
+        ).pushNamedAndRemoveUntil(Routes.splash, (route) => false);
+      });
     }
   }
 

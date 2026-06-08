@@ -94,11 +94,11 @@ class CustomButton extends StatelessWidget {
           child: _buildContent(theme.colorScheme.primary),
         );
 
-      case ButtonVariant.option:
+      case ButtonVariant.icon:
         return OutlinedButton(
           onPressed: (isLoading || isDisabled) ? null : onPressed,
           style: OutlinedButton.styleFrom(
-            side: BorderSide(color: theme.colorScheme.primary.withOpacity(0.12)),
+            side: BorderSide(color: theme.colorScheme.primary),
             foregroundColor: theme.colorScheme.primary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radius),

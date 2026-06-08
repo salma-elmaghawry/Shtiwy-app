@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shtiwy/core/helpers/app_validatore.dart';
+import 'package:shtiwy/core/helpers/spacing.dart';
 import 'package:shtiwy/core/routes/routes.dart';
 import 'package:shtiwy/core/utils/app_sizes.dart';
 import 'package:shtiwy/core/widgets/custom_text_field.dart';
@@ -67,7 +68,6 @@ class _SignUpPageState extends State<SignUpPage> {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
-          
             body: SingleChildScrollView(
               padding: EdgeInsets.symmetric(
                 horizontal: AppSizes.l24,
@@ -78,6 +78,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    verticalSpace(40),
                     const _SignUpHeader(),
                     SizedBox(height: AppSizes.xxl48),
                     _SignUpFormFields(
@@ -134,7 +135,6 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 }
-
 
 class _SignUpHeader extends StatelessWidget {
   const _SignUpHeader();

@@ -62,7 +62,7 @@ class _SplashPageState extends State<SplashPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(AppImages.appLogo, height: AppSizes.logo120),
+              Image.asset(AppImages.appLogo, height: AppSizes.logo200),
               SizedBox(height: AppSizes.l24),
               centeredCupertinoLoader(
                 color: Theme.of(context).primaryColor,
