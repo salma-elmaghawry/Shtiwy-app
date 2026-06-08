@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:nawirni/core/utils/app_text_styles.dart';
+import 'package:shtiwy/core/utils/app_text_styles.dart';
 import 'app_colors.dart';
 
 class AppTheme {

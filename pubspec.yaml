@@ -1,6 +1,7 @@
-name: nawirni
-description: "SHTIWY represents an ambitious vision for the future of
-  AI-powered education."
+name: shtiwy
+description: "Shtiwy is your ultimate travel companion, offering personalized
+  itineraries, real-time updates, and seamless booking for an unforgettable
+  travel experience."
 publish_to: "none"
 
 version: 1.0.0+1
@@ -21,6 +22,7 @@ dependencies:
   flutter_bloc: ^9.1.0
   flutter_dotenv: ^5.1.0
   flutter_screenutil: ^5.9.2
+  flutter_svg: ^2.3.0
   get_it: ^9.2.1
   google_fonts: ^8.1.0
   lean_builder: ^0.1.10
@@ -28,6 +30,7 @@ dependencies:
   supabase_flutter: ^2.0.0
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.11.0
   flutter_lints: ^6.0.0
   flutter_test:
     sdk: flutter
@@ -39,3 +42,12 @@ flutter:
     - assets/images/
     - assets/translations/
     - .env
+
+# Configuration for flutter_launcher_icons must live at top-level under `flutter_icons`.
+# Also ensure the package is declared in dev_dependencies.
+flutter_icons:
+  android: true
+  ios: true
+  image_path: assets/images/logo.png
+  adaptive_icon_background: "#FFFFFF" # Optional: Background color for adaptive icons (Android)
+  adaptive_icon_foreground: assets/images/logo.png # Optional: Foreground for adaptive icons (Android)

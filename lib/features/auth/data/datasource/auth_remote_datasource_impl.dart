@@ -1,6 +1,6 @@
-import 'package:nawirni/core/services/supabase_service.dart';
-import 'package:nawirni/features/auth/data/datasource/auth_remote_datasource.dart';
-import 'package:nawirni/features/auth/data/models/user_model.dart';
+import 'package:shtiwy/core/services/supabase_service.dart';
+import 'package:shtiwy/features/auth/data/datasource/auth_remote_datasource.dart';
+import 'package:shtiwy/features/auth/data/models/user_model.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class AuthRemoteDatasourceImpl implements AuthRemoteDataSource {

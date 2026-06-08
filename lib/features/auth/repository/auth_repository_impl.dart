@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:nawirni/core/error_handling/error_mapper.dart';
-import 'package:nawirni/core/error_handling/failures.dart';
-import 'package:nawirni/features/auth/data/datasource/auth_remote_datasource.dart';
-import 'package:nawirni/features/auth/domain/entities/user.dart';
-import 'package:nawirni/features/auth/repository/auth_repository.dart';
+import 'package:shtiwy/core/error_handling/error_mapper.dart';
+import 'package:shtiwy/core/error_handling/failures.dart';
+import 'package:shtiwy/features/auth/data/datasource/auth_remote_datasource.dart';
+import 'package:shtiwy/features/auth/domain/entities/user.dart';
+import 'package:shtiwy/features/auth/repository/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;

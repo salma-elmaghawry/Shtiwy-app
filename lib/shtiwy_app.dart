@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/services.dart';
-import 'package:nawirni/core/routes/app_router.dart';
-import 'package:nawirni/core/routes/routes.dart';
-import 'package:nawirni/core/theme/app_theme.dart';
-import 'package:nawirni/core/theme/controller/theme_cubit.dart';
-import 'package:nawirni/core/theme/controller/theme_state.dart';
+import 'package:shtiwy/core/routes/app_router.dart';
+import 'package:shtiwy/core/routes/routes.dart';
+import 'package:shtiwy/core/theme/app_theme.dart';
+import 'package:shtiwy/core/theme/controller/theme_cubit.dart';
+import 'package:shtiwy/core/theme/controller/theme_state.dart';
 
 class ShtiwyApp extends StatelessWidget {
   const ShtiwyApp({super.key});

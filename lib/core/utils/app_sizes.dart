@@ -29,6 +29,9 @@ class AppSizes {
   static double get buttonHeightM => 48.h;
   static double get buttonHeightL => 56.h;
 
+  // Logo Size
+  static double get logo => 120.h;
+
   // Input Heights
   static double get inputHeight => 56.h;
 

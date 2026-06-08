@@ -1,13 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nawirni/core/routes/routes.dart';
-import 'package:nawirni/core/utils/app_sizes.dart';
-import 'package:nawirni/core/widgets/app_header_controls.dart';
-import 'package:nawirni/core/widgets/custom_button.dart';
-import 'package:nawirni/core/widgets/loading_overlay.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_state.dart';
+import 'package:shtiwy/core/routes/routes.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
+import 'package:shtiwy/core/widgets/app_header_controls.dart';
+import 'package:shtiwy/core/widgets/custom_button.dart';
+import 'package:shtiwy/core/widgets/loading_overlay.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({super.key});

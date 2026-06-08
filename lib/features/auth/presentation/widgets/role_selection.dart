@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:nawirni/core/theme/app_colors.dart';
-import 'package:nawirni/core/utils/app_sizes.dart';
+import 'package:shtiwy/core/theme/app_colors.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
 
 class RoleSelectionSection extends StatelessWidget {
   final String? selectedRole;

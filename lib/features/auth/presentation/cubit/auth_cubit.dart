@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nawirni/core/bloc/base_bloc.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_state.dart';
-import 'package:nawirni/features/auth/repository/auth_repository.dart';
+import 'package:shtiwy/core/bloc/base_bloc.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
+import 'package:shtiwy/features/auth/repository/auth_repository.dart';
 
 class AuthCubit extends Cubit<AuthStates> {
   final AuthRepository _authRepository;

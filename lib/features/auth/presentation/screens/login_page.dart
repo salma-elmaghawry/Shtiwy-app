@@ -1,15 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nawirni/core/helpers/app_validatore.dart';
-import 'package:nawirni/core/routes/routes.dart';
-import 'package:nawirni/core/utils/app_sizes.dart';
-import 'package:nawirni/core/widgets/app_header_controls.dart';
-import 'package:nawirni/core/widgets/loading_overlay.dart';
-import 'package:nawirni/core/widgets/custom_button.dart';
-import 'package:nawirni/core/widgets/custom_text_field.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_state.dart';
+import 'package:shtiwy/core/helpers/app_validatore.dart';
+import 'package:shtiwy/core/resources/app_images.dart';
+import 'package:shtiwy/core/routes/routes.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
+import 'package:shtiwy/core/widgets/app_header_controls.dart';
+import 'package:shtiwy/core/widgets/loading_overlay.dart';
+import 'package:shtiwy/core/widgets/custom_button.dart';
+import 'package:shtiwy/core/widgets/custom_text_field.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -79,11 +80,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Icon(
-                        Icons.school_rounded,
-                        size: 80,
-                        color: Theme.of(context).primaryColor,
-                      ),
+                      Image.asset(AppImages.appLogo, height: AppSizes.logo),
+
                       SizedBox(height: AppSizes.m),
                       Text(
                         'auth.login.title'.tr(),
@@ -98,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                           context,
                         ).textTheme.bodyMedium?.copyWith(color: Colors.grey),
                       ),
-                      SizedBox(height: AppSizes.xxl),
+                      SizedBox(height: AppSizes.xl),
                       CustomTextField(
                         controller: _emailController,
                         label: 'auth.login.email_label'.tr(),

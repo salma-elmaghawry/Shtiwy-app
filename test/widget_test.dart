@@ -3,12 +3,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:nawirni/core/error_handling/failures.dart';
-import 'package:nawirni/core/theme/controller/theme_cubit.dart';
-import 'package:nawirni/features/auth/domain/entities/user.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:nawirni/features/auth/repository/auth_repository.dart';
-import 'package:nawirni/shitawy_app.dart';
+import 'package:shtiwy/core/error_handling/failures.dart';
+import 'package:shtiwy/core/theme/controller/theme_cubit.dart';
+import 'package:shtiwy/features/auth/domain/entities/user.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:shtiwy/features/auth/repository/auth_repository.dart';
+import 'package:shtiwy/shtiwy_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

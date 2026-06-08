@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nawirni/core/routes/routes.dart';
-import 'package:nawirni/core/utils/app_sizes.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:nawirni/features/auth/presentation/cubit/auth_state.dart';
+import 'package:shtiwy/core/resources/app_images.dart';
+import 'package:shtiwy/core/routes/routes.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
+import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -48,11 +49,7 @@ class _SplashPageState extends State<SplashPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.school_rounded,
-                size: AppSizes.iconXL,
-                color: Theme.of(context).primaryColor,
-              ),
+              Image.asset(AppImages.appLogo, height: AppSizes.logo),
               SizedBox(height: AppSizes.l),
               CircularProgressIndicator(),
             ],

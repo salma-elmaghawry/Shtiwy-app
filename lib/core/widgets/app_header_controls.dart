@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nawirni/core/theme/controller/theme_cubit.dart';
-import 'package:nawirni/core/theme/controller/theme_state.dart';
-import 'package:nawirni/core/widgets/app_segmented_toggle.dart';
+import 'package:shtiwy/core/theme/controller/theme_cubit.dart';
+import 'package:shtiwy/core/theme/controller/theme_state.dart';
+import 'package:shtiwy/core/widgets/app_segmented_toggle.dart';
 
 class AppHeaderControls extends StatelessWidget {
   final bool showLanguage;

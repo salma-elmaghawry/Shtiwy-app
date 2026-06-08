@@ -1,8 +1,6 @@
-
-
-import 'package:nawirni/core/bloc/base_bloc.dart';
-import 'package:nawirni/core/error_handling/failures.dart';
-import 'package:nawirni/features/auth/domain/entities/user.dart';
+import 'package:shtiwy/core/bloc/base_bloc.dart';
+import 'package:shtiwy/core/error_handling/failures.dart';
+import 'package:shtiwy/features/auth/domain/entities/user.dart';
 
 class AuthStates extends BaseState {
   final User? user;
@@ -45,6 +43,5 @@ class AuthStates extends BaseState {
     isAuthenticated,
     isEmailVerified,
     failure,
-    
   ];
 }

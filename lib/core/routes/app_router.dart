@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nawirni/core/routes/routes.dart';
-import 'package:nawirni/features/auth/presentation/screens/splash_page.dart';
-import 'package:nawirni/features/auth/presentation/screens/login_page.dart';
-import 'package:nawirni/features/auth/presentation/screens/sign_up_page.dart';
-import 'package:nawirni/features/auth/presentation/screens/otp_screen.dart';
-import 'package:nawirni/features/home/home_page.dart';
+import 'package:shtiwy/core/routes/routes.dart';
+import 'package:shtiwy/features/auth/presentation/screens/splash_page.dart';
+import 'package:shtiwy/features/auth/presentation/screens/login_page.dart';
+import 'package:shtiwy/features/auth/presentation/screens/sign_up_page.dart';
+import 'package:shtiwy/features/auth/presentation/screens/otp_screen.dart';
+import 'package:shtiwy/features/home/home_page.dart';
 
 class AppRouter {
   Route<dynamic> generateRoute(RouteSettings settings) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nawirni/core/utils/app_sizes.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
 
 enum ButtonVariant { primary, secondary, tertiary, outlined, text }
 
@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    
+
     return SizedBox(
       width: width ?? double.infinity,
       height: height ?? AppSizes.buttonHeightM,
@@ -37,7 +37,6 @@ class CustomButton extends StatelessWidget {
   }
 
   Widget _buildButton(ThemeData theme) {
-    
     switch (variant) {
       case ButtonVariant.primary:
         return ElevatedButton(
@@ -105,10 +104,7 @@ class CustomButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: [
-        if (icon != null) ...[
-          icon!,
-          SizedBox(width: AppSizes.s),
-        ],
+        if (icon != null) ...[icon!, SizedBox(width: AppSizes.s)],
         Text(text),
       ],
     );

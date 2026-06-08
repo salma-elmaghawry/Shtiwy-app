@@ -1,10 +1,8 @@
-# Nawirni: Your Study, Your Way, Powered by AI
+# Shitawy
 
-**Nawirni** is an innovative AI-powered study companion mobile application designed to revolutionize personalized learning. Whether you're a student looking to improve your grades, a professional developing new skills, or a lifelong learner, Nawirni adapts to your unique learning style and pace.
+**Shitawy**
 
-## About Nawirni
-
-Nawirni combines cutting-edge artificial intelligence with intuitive design to create a personalized study experience tailored to each user. Our mission is to empower learners by providing adaptive content, intelligent recommendations, and interactive study tools that make learning more effective and engaging.
+اداره رحلات الحج والعمره وكده
 
 ### Key Features
 
@@ -54,7 +52,7 @@ lib/
 │   └── error_handling/ # Error handling utilities
 ├── features/           # Feature-specific modules
 ├── main.dart          # App entry point
-└── nawirni_app.dart   # App configuration
+└── shitawy_app.dart   # App configuration
 ```
 
 ## Technology Stack
@@ -73,7 +71,8 @@ lib/
 
 ## Architecture
 
-Nawirni follows the **Clean Architecture** principles with **BLoC** pattern for state management, ensuring:
+
+Shitawy follows the **Clean Architecture** principles with **BLoC** pattern for state management, ensuring:
 
 - Separation of concerns
 - Testability
@@ -91,7 +90,7 @@ Nawirni follows the **Clean Architecture** principles with **BLoC** pattern for 
 
 ## Localization
 
-Nawirni supports multiple languages:
+Shitawy supports multiple languages:
 - 🇬🇧 English
 - 🇸🇦 العربية (Arabic)
 
@@ -111,7 +110,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-For support, please open an issue on GitHub or contact us at support@nawirni.com
+For support, please open an issue on GitHub or contact us at support@shitawy.com
 
 ## Acknowledgments
 
@@ -121,4 +120,4 @@ For support, please open an issue on GitHub or contact us at support@nawirni.com
 
 ---
 
-**Nawirni**: Your Study, Your Way, Powered by AI.
+**Shitawy**: اداره رحلات الحج والعمره وكده
