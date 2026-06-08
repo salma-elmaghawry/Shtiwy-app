@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               automaticallyImplyLeading: false,
-              actions: const [AppHeaderControls()],
+              actions: const [AppHeaderControls(showTheme: false)],
             ),
             body: Center(
               child: SingleChildScrollView(

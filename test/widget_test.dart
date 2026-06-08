@@ -8,7 +8,7 @@ import 'package:nawirni/core/theme/controller/theme_cubit.dart';
 import 'package:nawirni/features/auth/domain/entities/user.dart';
 import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:nawirni/features/auth/repository/auth_repository.dart';
-import 'package:nawirni/nawirni_app.dart';
+import 'package:nawirni/shitawy_app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {

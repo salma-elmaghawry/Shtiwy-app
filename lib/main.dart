@@ -6,7 +6,7 @@ import 'package:nawirni/core/injection/injection_container.dart';
 import 'package:nawirni/core/services/supabase_service.dart';
 import 'package:nawirni/core/theme/controller/theme_cubit.dart';
 import 'package:nawirni/features/auth/presentation/cubit/auth_cubit.dart';
-import 'package:nawirni/nawirni_app.dart';
+import 'package:nawirni/shitawy_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

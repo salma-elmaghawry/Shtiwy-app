@@ -141,7 +141,7 @@ PreferredSizeWidget _buildAppBar(BuildContext context) {
     backgroundColor: Colors.transparent,
     elevation: 0,
     iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-    actions: const [AppHeaderControls()],
+    actions: const [AppHeaderControls(showTheme: false)],
   );
 }
 

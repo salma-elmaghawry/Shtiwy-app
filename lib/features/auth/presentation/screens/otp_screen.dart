@@ -60,7 +60,7 @@ class _OtpScreenState extends State<OtpScreen> {
               backgroundColor: Colors.transparent,
               elevation: 0,
               iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-              actions: const [AppHeaderControls()],
+              actions: const [AppHeaderControls(showTheme: false)],
             ),
             body: Center(
               child: SingleChildScrollView(
