@@ -34,11 +34,21 @@ class AuthRemoteDatasourceImpl implements AuthRemoteDataSource {
     required String password,
     required String name,
     required String role,
+    String? phoneNumber,
+    String? country,
+    double? latitude,
+    double? longitude,
   }) async {
+    final metadata = {'full_name': name, 'role': role, 'account_type': 'user'};
+    if (phoneNumber != null) metadata['phone_number'] = phoneNumber;
+    if (country != null) metadata['country'] = country;
+    if (latitude != null) metadata['latitude'] = latitude.toString();
+    if (longitude != null) metadata['longitude'] = longitude.toString();
+
     final response = await _auth.signUp(
       email: email,
       password: password,
-      data: {'full_name': name, 'role': role},
+      data: metadata,
     );
     final user = response.user;
 

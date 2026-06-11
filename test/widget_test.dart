@@ -87,6 +87,10 @@ class _FakeAuthRepository implements AuthRepository {
     required String password,
     required String name,
     required String role,
+    String? phoneNumber,
+    String? country,
+    double? latitude,
+    double? longitude,
   }) async {
     return left(_failure);
   }

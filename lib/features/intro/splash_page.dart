@@ -77,9 +77,5 @@ class _SplashPageState extends State<SplashPage> {
 }
 
 void handleHomeNavigation(BuildContext context, AuthStates state) {
-  if (state.user?.role == 'student') {
-    Navigator.of(context).pushReplacementNamed(Routes.home);
-  } else {
-    Navigator.of(context).pushReplacementNamed(Routes.home);
-  }
+  Navigator.of(context).pushReplacementNamed(Routes.home);
 }

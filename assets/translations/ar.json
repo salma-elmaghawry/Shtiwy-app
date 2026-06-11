@@ -52,7 +52,15 @@
             "role_student_desc": "الوصول إلى الدورات والمواد التعليمية",
             "role_tutor": "مدير",
             "role_tutor_desc": "إدارة الدورات والمحتوى",
-            "role_required_error": "يرجى تحديد ما إذا كنت مستخدماً أم مديراً"
+                "role_required_error": "يرجى تحديد ما إذا كنت مستخدماً أم مديراً",
+                "phone_label": "رقم الهاتف",
+                "phone_hint": "أدخل رقم هاتفك",
+                "country_label": "البلد",
+                "country_hint": "اختر بلدك",
+                "location_label": "الموقع",
+                "location_hint": "اختر موقعك على الخريطة",
+                "location_search_placeholder": "ابحث عن الأماكن",
+                "location_select_button": "اختر الموقع"
         },
         "otp": {
             "title": "التحقق من البريد الإلكتروني",

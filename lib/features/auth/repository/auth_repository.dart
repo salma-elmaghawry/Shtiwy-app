@@ -12,6 +12,10 @@ abstract class AuthRepository {
     required String password,
     required String name,
     required String role,
+    String? phoneNumber,
+    String? country,
+    double? latitude,
+    double? longitude,
   });
   Future<Either<Failure, void>> signOut();
   // otp

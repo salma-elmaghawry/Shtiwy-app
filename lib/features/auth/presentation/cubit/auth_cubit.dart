@@ -37,6 +37,10 @@ class AuthCubit extends Cubit<AuthStates> {
     required String password,
     required String name,
     required String role,
+    String? phoneNumber,
+    String? country,
+    double? latitude,
+    double? longitude,
   }) async {
     emit(state.copyWith(status: Status.loading));
     final result = await _authRepository.signUp(
@@ -44,6 +48,10 @@ class AuthCubit extends Cubit<AuthStates> {
       password: password,
       name: name,
       role: role,
+      phoneNumber: phoneNumber,
+      country: country,
+      latitude: latitude,
+      longitude: longitude,
     );
     result.fold(
       (failure) => emit(

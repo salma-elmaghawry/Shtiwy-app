@@ -53,6 +53,15 @@
             "role_tutor": "Manager",
             "role_tutor_desc": "Manage courses and content",
             "role_required_error": "Please select whether you are a User or a Manager"
+               ,
+               "phone_label": "Phone Number",
+               "phone_hint": "Enter your phone number",
+               "country_label": "Country",
+               "country_hint": "Select your country",
+               "location_label": "Location",
+               "location_hint": "Choose your location on map",
+               "location_search_placeholder": "Search places",
+               "location_select_button": "Select location"
         },
         "otp": {
             "title": "Email Verification",
