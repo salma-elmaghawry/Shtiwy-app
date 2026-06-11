@@ -9,6 +9,8 @@ import 'package:shtiwy/core/widgets/custom_text_field.dart';
 import 'package:shtiwy/core/widgets/custom_button.dart';
 import 'package:shtiwy/core/widgets/loading_overlay.dart';
 import 'package:shtiwy/features/auth/presentation/widgets/role_selection.dart';
+import 'package:country_code_picker/country_code_picker.dart';
+import 'location_picker_page.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
 
@@ -26,6 +28,12 @@ class _SignUpPageState extends State<SignUpPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+  final _phoneController = TextEditingController();
+  final _countryController = TextEditingController();
+  String? _selectedDialCode = '+1';
+  double? _pickedLatitude;
+  double? _pickedLongitude;
+  String? _pickedAddress;
 
   String? _selectedRole;
   bool _showRoleError = false;
@@ -36,6 +44,8 @@ class _SignUpPageState extends State<SignUpPage> {
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _phoneController.dispose();
+    _countryController.dispose();
     super.dispose();
   }
 
@@ -88,6 +98,76 @@ class _SignUpPageState extends State<SignUpPage> {
                       confirmPasswordController: _confirmPasswordController,
                     ),
                     SizedBox(height: AppSizes.m16),
+                    // Phone & Country row (phone with country code picker)
+                    Row(
+                      children: [
+                        CountryCodePicker(
+                          onChanged: (c) {
+                            setState(() {
+                              _selectedDialCode = c.dialCode;
+                              _countryController.text = c.name ?? '';
+                            });
+                          },
+                          initialSelection: 'US',
+                          favorite: const ['+1', 'US'],
+                          showCountryOnly: false,
+                        ),
+                        SizedBox(width: AppSizes.s8),
+                        Expanded(
+                          child: CustomTextField(
+                            controller: _phoneController,
+                            label: 'auth.signup.phone_label'.tr(),
+                            hint: 'auth.signup.phone_hint'.tr(),
+                            keyboardType: TextInputType.phone,
+                            prefixIcon: const Icon(Icons.phone_outlined),
+                          ),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: AppSizes.m16),
+
+                    CustomTextField(
+                      controller: _countryController,
+                      label: 'auth.signup.country_label'.tr(),
+                      hint: 'auth.signup.country_hint'.tr(),
+                      prefixIcon: const Icon(Icons.public_outlined),
+                    ),
+
+                    SizedBox(height: AppSizes.m16),
+
+                    // Location picker
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            _pickedAddress ?? 'auth.signup.location_hint'.tr(),
+                            maxLines: 2,
+                          ),
+                        ),
+                        TextButton.icon(
+                          onPressed: () async {
+                            final res = await Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (_) => const LocationPickerPage(),
+                              ),
+                            );
+                            if (res != null && res is Map<String, dynamic>) {
+                              setState(() {
+                                _pickedLatitude = res['latitude'] as double?;
+                                _pickedLongitude = res['longitude'] as double?;
+                                _pickedAddress = res['address'] as String?;
+                              });
+                            }
+                          },
+                          icon: const Icon(Icons.map_outlined),
+                          label: Text('auth.signup.location_label'.tr()),
+                        ),
+                      ],
+                    ),
+
+                    SizedBox(height: AppSizes.m16),
+
                     RoleSelectionSection(
                       selectedRole: _selectedRole,
                       showRoleError: _showRoleError,
@@ -132,6 +212,14 @@ class _SignUpPageState extends State<SignUpPage> {
       password: _passwordController.text,
       name: _nameController.text.trim(),
       role: _selectedRole!,
+      phoneNumber: _phoneController.text.trim().isEmpty
+          ? null
+          : '${_selectedDialCode ?? ''}${_phoneController.text.trim()}',
+      country: _countryController.text.trim().isEmpty
+          ? null
+          : _countryController.text.trim(),
+      latitude: _pickedLatitude,
+      longitude: _pickedLongitude,
     );
   }
 }
@@ -219,7 +307,6 @@ class _SignUpFormFields extends StatelessWidget {
         ),
 
         SizedBox(height: AppSizes.m16),
-
         CustomTextField(
           controller: confirmPasswordController,
           label: 'auth.signup.confirm_password_label'.tr(),
@@ -227,6 +314,8 @@ class _SignUpFormFields extends StatelessWidget {
           isPassword: true,
           prefixIcon: const Icon(Icons.lock_outline),
         ),
+
+        SizedBox(height: AppSizes.m16),
       ],
     );
   }

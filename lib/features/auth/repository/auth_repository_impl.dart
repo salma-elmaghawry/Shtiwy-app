@@ -58,6 +58,10 @@ class AuthRepositoryImpl implements AuthRepository {
     required String password,
     required String name,
     required String role,
+    String? phoneNumber,
+    String? country,
+    double? latitude,
+    double? longitude,
   }) async {
     try {
       final user = await _remoteDataSource.signUp(
@@ -65,6 +69,10 @@ class AuthRepositoryImpl implements AuthRepository {
         password: password,
         name: name,
         role: role,
+        phoneNumber: phoneNumber,
+        country: country,
+        latitude: latitude,
+        longitude: longitude,
       );
       return Right(user.toEntity());
     } catch (e) {

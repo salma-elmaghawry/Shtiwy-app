@@ -5,6 +5,7 @@ import 'package:shtiwy/core/routes/routes.dart';
 import 'package:shtiwy/core/widgets/loading_overlay.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
+import 'package:shtiwy/features/packages/presentation/widgets/packages_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,7 +29,15 @@ class HomeScreen extends StatelessWidget {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
-            body: const Center(child: Text('Welcome to Shtiwy')),
+            body: Column(
+              children: [
+                Text(
+                  'app_name'.tr(),
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ).tr(),
+                const PackagesList(),
+              ],
+            ),
           ),
         );
       },

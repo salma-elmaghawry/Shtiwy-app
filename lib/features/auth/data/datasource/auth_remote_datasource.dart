@@ -8,6 +8,10 @@ abstract class AuthRemoteDataSource {
     required String password,
     required String name,
     required String role,
+    String? phoneNumber,
+    String? country,
+    double? latitude,
+    double? longitude,
   });
 
   Future<void> signOut();
