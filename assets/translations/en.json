@@ -97,8 +97,10 @@
         "my_students_desc": "Manage and assist your enrolled students",
         "analytics": "Performance Analytics",
         "analytics_desc": "Track your ratings, feedback, and sales"
-    }
-    ,
+    },
+    "actions": {
+        "continue": "Continue"
+    },
     "onboarding": {
         "skip": "Skip",
         "next": "Next",

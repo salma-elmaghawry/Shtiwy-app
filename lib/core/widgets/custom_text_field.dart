@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../helpers/app_validatore.dart';
 import '../theme/app_colors.dart';
 import '../utils/app_sizes.dart';
-enum PasswordStrength { none, weak, medium, strong }
 
+enum PasswordStrength { none, weak, medium, strong }
 
 class CustomTextField extends StatefulWidget {
   final String? label;
@@ -98,13 +98,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
-    return TextFormField(
+    final textField = TextFormField(
       controller: widget.controller,
       obscureText: widget.isPassword && !_isPasswordVisible,
       keyboardType: widget.keyboardType,
       validator: widget.validator,
       enabled: widget.enabled,
       maxLines: widget.isPassword ? 1 : widget.maxLines,
+      textAlignVertical: TextAlignVertical.center,
       style: theme.textTheme.bodyMedium,
       onChanged: (value) {
         setState(() => _value = value);
@@ -129,6 +130,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
         errorBorder: _buildErrorBorder(theme),
       ),
     );
+
+    if (widget.isPassword || widget.maxLines == 1) {
+      return SizedBox(height: AppSizes.inputHeight56, child: textField);
+    }
+
+    return textField;
   }
 
   Widget _buildSuffixIcon() {
@@ -271,5 +278,3 @@ class _CustomTextFieldState extends State<CustomTextField> {
     };
   }
 }
-
-

@@ -229,10 +229,10 @@ packages:
     dependency: "direct main"
     description:
       name: country_code_picker
-      sha256: "6eed752b23cf2331435b08d246f7aee6eae0eda25ae357560b6794ef02e87ee6"
+      sha256: f0411f4833b6f98e8b7215f4fa3813bcc88e50f13925f70a170dbd36e3e447f5
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.2"
+    version: "3.4.1"
   crypto:
     dependency: transitive
     description:
@@ -281,6 +281,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.10.1"
+  diacritic:
+    dependency: transitive
+    description:
+      name: diacritic
+      sha256: "12981945ec38931748836cd76f2b38773118d0baef3c68404bdfde9566147876"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.6"
   easy_localization:
     dependency: "direct main"
     description:
@@ -773,14 +781,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.0"
-  modal_bottom_sheet:
-    dependency: transitive
-    description:
-      name: modal_bottom_sheet
-      sha256: ef533916a2c3089571c32bd34e410faca77a6849a3f28f748e0794525c5658a0
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.2"
   nested:
     dependency: transitive
     description:
@@ -1154,14 +1154,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
-  universal_platform:
-    dependency: transitive
-    description:
-      name: universal_platform
-      sha256: "64e16458a0ea9b99260ceb5467a214c1f298d647c659af1bff6d3bf82536b1ec"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.1.0"
   url_launcher:
     dependency: transitive
     description:

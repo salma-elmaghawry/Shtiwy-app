@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shtiwy/core/animations/animations.dart';
 import 'package:shtiwy/core/helpers/app_validatore.dart';
+import 'package:shtiwy/core/helpers/spacing.dart';
 import 'package:shtiwy/core/resources/app_images.dart';
 import 'package:shtiwy/core/routes/routes.dart';
 import 'package:shtiwy/core/utils/app_sizes.dart';
@@ -63,7 +64,6 @@ class _LoginPageState extends State<LoginPage> {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
-            
             body: Center(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(
@@ -75,9 +75,13 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Image.asset(AppImages.appLogo, height: AppSizes.logo120).popIn(),
+                      verticalSpace(AppSizes.screenTopHeight40),
+                      Image.asset(
+                        AppImages.appLogo,
+                        height: AppSizes.logo120,
+                      ).popIn(),
 
-                      SizedBox(height: AppSizes.m16),
+                      verticalSpace(AppSizes.m16),
                       Text(
                         'auth.login.title'.tr(),
                         textAlign: TextAlign.center,
