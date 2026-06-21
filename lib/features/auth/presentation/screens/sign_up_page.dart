@@ -5,5 +5,10 @@ class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
 
   @override
-  Widget build(BuildContext context) => const SignUpBody();
+  Widget build(BuildContext context) => Scaffold(
+    body: SafeArea(
+      bottom: true,
+      child: SignUpBody(),
+    ),
+  );
 }

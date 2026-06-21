@@ -1,7 +1,5 @@
-import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:shtiwy/core/theme/app_colors.dart';
 
 Widget centeredCupertinoLoader({Color? color, double size = 30}) {

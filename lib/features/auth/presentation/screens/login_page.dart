@@ -37,6 +37,8 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthStates>(
       listener: (context, state) {
+        if (state.action != AuthAction.login) return;
+
         if (state.isFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(

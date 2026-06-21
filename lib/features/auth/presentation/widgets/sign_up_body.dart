@@ -6,6 +6,7 @@ import 'package:shtiwy/core/animations/app_animations.dart';
 import 'package:shtiwy/core/helpers/app_validatore.dart';
 import 'package:shtiwy/core/helpers/spacing.dart';
 import 'package:shtiwy/core/resources/app_images.dart';
+import 'package:shtiwy/core/routes/routes.dart';
 import 'package:shtiwy/core/theme/app_colors.dart';
 import 'package:shtiwy/core/utils/app_sizes.dart';
 import 'package:shtiwy/core/widgets/custom_button.dart';
@@ -14,7 +15,7 @@ import 'package:shtiwy/core/widgets/loading_overlay.dart';
 // role_selection removed; sign-up defaults to 'user'
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
-import 'package:shtiwy/core/shared_pages/location_picker_page.dart';
+
 
 class SignUpBody extends StatefulWidget {
   const SignUpBody({super.key});
@@ -30,15 +31,13 @@ class _SignUpBodyState extends State<SignUpBody> {
   final _password = TextEditingController();
   final _confirm = TextEditingController();
   final _phone = TextEditingController();
-  final _country = TextEditingController();
   String? _dial = '+1';
   final String _role = 'user';
-  double? _lat, _lng;
-  String? _address;
+
 
   @override
   void dispose() {
-    for (final c in [_name, _email, _password, _confirm, _phone, _country]) {
+    for (final c in [_name, _email, _password, _confirm, _phone]) {
       c.dispose();
     }
     super.dispose();
@@ -65,7 +64,6 @@ class _SignUpBodyState extends State<SignUpBody> {
     return CountryCodePicker(
       onChanged: (c) => setState(() {
         _dial = c.dialCode;
-        _country.text = c.name ?? '';
       }),
       initialSelection: 'US',
       favorite: const ['+1', 'US'],
@@ -168,9 +166,8 @@ class _SignUpBodyState extends State<SignUpBody> {
       phoneNumber: _phone.text.trim().isEmpty
           ? null
           : '$_dial${_phone.text.trim()}',
-      country: _country.text.trim().isEmpty ? null : _country.text.trim(),
-      latitude: _lat,
-      longitude: _lng,
+
+
     );
   }
 
@@ -178,6 +175,8 @@ class _SignUpBodyState extends State<SignUpBody> {
   Widget build(BuildContext context) {
     return BlocListener<AuthCubit, AuthStates>(
       listener: (context, state) {
+        if (state.action != AuthAction.signUp) return;
+
         if (state.isFailure) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -186,9 +185,11 @@ class _SignUpBodyState extends State<SignUpBody> {
             ),
           );
         } else if (state.isSuccess && !state.isEmailVerified) {
-          Navigator.of(
+          Navigator.pushNamed(
             context,
-          ).pushReplacementNamed('/otp', arguments: _email.text.trim());
+            Routes.otpVerification,
+            arguments: _email.text.trim(),
+          );
         }
       },
       child: BlocBuilder<AuthCubit, AuthStates>(
@@ -238,6 +239,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                         prefixIcon: const Icon(Icons.email_outlined),
                         keyboardType: TextInputType.emailAddress,
                         liveValidation: true,
+                        validator: AppValidators.validateEmail,
                       ),
                       SizedBox(height: AppSizes.m16),
                       CustomTextField(
@@ -245,10 +247,7 @@ class _SignUpBodyState extends State<SignUpBody> {
                         label: 'auth.login.password_label'.tr(),
                         hint: 'auth.login.password_hint'.tr(),
                         isPassword: true,
-                        validator: (v) => AppValidators.validateConfirmPassword(
-                          v,
-                          _password.text,
-                        ),
+                        validator: AppValidators.validatePassword,
                         prefixIcon: const Icon(Icons.lock_outline),
                         liveValidation: true,
                         showPasswordStrength: true,
@@ -259,6 +258,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                         label: 'auth.signup.confirm_password_label'.tr(),
                         hint: 'auth.signup.confirm_password_hint'.tr(),
                         isPassword: true,
+                        validator: (v) => AppValidators.validateConfirmPassword(
+                          v,
+                          _password.text,
+                        ),
                         prefixIcon: const Icon(Icons.lock_outline),
                       ),
                       SizedBox(height: AppSizes.m16),
@@ -273,7 +276,10 @@ class _SignUpBodyState extends State<SignUpBody> {
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              _buildCountryCodePicker(context),
+                              SizedBox(
+                                height: AppSizes.inputHeight56,
+                                child: _buildCountryCodePicker(context),
+                              ),
                               SizedBox(width: AppSizes.s8),
                               Expanded(
                                 child: CustomTextField(
@@ -287,43 +293,8 @@ class _SignUpBodyState extends State<SignUpBody> {
                           ),
                         ],
                       ),
-                      SizedBox(height: AppSizes.m16),
-                      CustomTextField(
-                        controller: _country,
-                        label: 'auth.signup.country_label'.tr(),
-                        hint: 'auth.signup.country_hint'.tr(),
-                        prefixIcon: const Icon(Icons.public_outlined),
-                      ),
-                      SizedBox(height: AppSizes.m16),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Text(
-                              _address ?? 'auth.signup.location_hint'.tr(),
-                              maxLines: 2,
-                            ),
-                          ),
-                          TextButton.icon(
-                            onPressed: () async {
-                              final res = await Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (_) => const LocationPickerPage(),
-                                ),
-                              );
-                              if (res != null && res is Map<String, dynamic>) {
-                                setState(() {
-                                  _lat = res['latitude'] as double?;
-                                  _lng = res['longitude'] as double?;
-                                  _address = res['address'] as String?;
-                                });
-                              }
-                            },
-                            icon: const Icon(Icons.map_outlined),
-                            label: Text('auth.signup.location_label'.tr()),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: AppSizes.m16),
+
+
                       // RoleSelection removed — default role set to 'user'
                       SizedBox(height: AppSizes.l24),
                       CustomButton(

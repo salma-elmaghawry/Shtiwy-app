@@ -8,7 +8,7 @@ class AuthCubit extends Cubit<AuthStates> {
   AuthCubit(this._authRepository) : super(const AuthStates());
 
   Future<void> signIn({required String email, required String password}) async {
-    emit(state.copyWith(status: Status.loading));
+    emit(state.copyWith(status: Status.loading, action: AuthAction.login));
     final result = await _authRepository.signIn(
       email: email,
       password: password,
@@ -19,6 +19,7 @@ class AuthCubit extends Cubit<AuthStates> {
           status: Status.failure,
           message: failure.message,
           failure: failure,
+          action: AuthAction.login,
         ),
       ),
       (user) => emit(
@@ -27,6 +28,7 @@ class AuthCubit extends Cubit<AuthStates> {
           user: user,
           isAuthenticated: true,
           isEmailVerified: user.isEmailVerified,
+          action: AuthAction.login,
         ),
       ),
     );
@@ -42,7 +44,7 @@ class AuthCubit extends Cubit<AuthStates> {
     double? latitude,
     double? longitude,
   }) async {
-    emit(state.copyWith(status: Status.loading));
+    emit(state.copyWith(status: Status.loading, action: AuthAction.signUp));
     final result = await _authRepository.signUp(
       email: email,
       password: password,
@@ -59,6 +61,7 @@ class AuthCubit extends Cubit<AuthStates> {
           status: Status.failure,
           message: failure.message,
           failure: failure,
+          action: AuthAction.signUp,
         ),
       ),
       (user) => emit(
@@ -66,14 +69,15 @@ class AuthCubit extends Cubit<AuthStates> {
           status: Status.success,
           user: user,
           isAuthenticated: true,
-          isEmailVerified: false,
+          isEmailVerified: user.isEmailVerified ?? false,
+          action: AuthAction.signUp,
         ),
       ),
     );
   }
 
   Future<void> verifyOTP({required String email, required String token}) async {
-    emit(state.copyWith(status: Status.loading));
+    emit(state.copyWith(status: Status.loading, action: AuthAction.verifyOTP));
     final result = await _authRepository.verifyOTP(email: email, token: token);
     result.fold(
       (failure) => emit(
@@ -81,6 +85,7 @@ class AuthCubit extends Cubit<AuthStates> {
           status: Status.failure,
           message: failure.message,
           failure: failure,
+          action: AuthAction.verifyOTP,
         ),
       ),
       (user) => emit(
@@ -89,6 +94,7 @@ class AuthCubit extends Cubit<AuthStates> {
           user: user,
           isAuthenticated: true,
           isEmailVerified: true,
+          action: AuthAction.verifyOTP,
         ),
       ),
     );
@@ -97,7 +103,7 @@ class AuthCubit extends Cubit<AuthStates> {
   // resend otp
 
   Future<void> resendOTP({required String email}) async {
-    emit(state.copyWith(status: Status.loading));
+    emit(state.copyWith(status: Status.loading, action: AuthAction.resendOTP));
     final result = await _authRepository.resendOTP(email: email);
     result.fold(
       (failure) => emit(
@@ -105,12 +111,14 @@ class AuthCubit extends Cubit<AuthStates> {
           status: Status.failure,
           message: failure.message,
           failure: failure,
+          action: AuthAction.resendOTP,
         ),
       ),
       (_) => emit(
         state.copyWith(
           status: Status.success,
           message: "OTP resent successfully",
+          action: AuthAction.resendOTP,
         ),
       ),
     );
@@ -118,7 +126,7 @@ class AuthCubit extends Cubit<AuthStates> {
 
   // sign out
   Future<void> signOut() async {
-    emit(state.copyWith(status: Status.loading));
+    emit(state.copyWith(status: Status.loading, action: AuthAction.signOut));
     final result = await _authRepository.signOut();
     result.fold(
       (failure) => emit(
@@ -126,10 +134,15 @@ class AuthCubit extends Cubit<AuthStates> {
           status: Status.failure,
           message: failure.message,
           failure: failure,
+          action: AuthAction.signOut,
         ),
       ),
       (_) => emit(
-        const AuthStates(status: Status.initial, isAuthenticated: false),
+        const AuthStates(
+          status: Status.initial,
+          isAuthenticated: false,
+          action: AuthAction.signOut,
+        ),
       ),
     );
   }
@@ -144,6 +157,7 @@ class AuthCubit extends Cubit<AuthStates> {
           user: user,
           isAuthenticated: true,
           isEmailVerified: user.isEmailVerified,
+          action: AuthAction.checkStatus,
         ),
       );
     } else {
@@ -153,6 +167,7 @@ class AuthCubit extends Cubit<AuthStates> {
           user: null,
           isAuthenticated: false,
           isEmailVerified: false,
+          action: AuthAction.checkStatus,
         ),
       );
     }
