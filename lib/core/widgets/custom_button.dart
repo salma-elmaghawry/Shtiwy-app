@@ -34,11 +34,11 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       width: width ?? double.infinity,
       height: height ?? AppSizes.buttonHeightM48,
-      child: _buildButton(theme),
+      child: _buildButton(context, theme),
     );
   }
 
-  Widget _buildButton(ThemeData theme) {
+  Widget _buildButton(BuildContext context, ThemeData theme) {
     final radius = borderRadius ?? AppSizes.rM12;
 
     switch (variant) {
@@ -52,7 +52,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
             ),
           ),
-          child: _buildContent(Colors.white),
+          child: _buildContent(context, Colors.white),
         );
 
       case ButtonVariant.secondary:
@@ -65,7 +65,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
             ),
           ),
-          child: _buildContent(Colors.white),
+          child: _buildContent(context, Colors.white),
         );
 
       case ButtonVariant.tertiary:
@@ -78,7 +78,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
             ),
           ),
-          child: _buildContent(Colors.black),
+          child: _buildContent(context, Colors.black),
         );
 
       case ButtonVariant.outlined:
@@ -91,7 +91,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
             ),
           ),
-          child: _buildContent(theme.colorScheme.primary),
+          child: _buildContent(context, theme.colorScheme.primary),
         );
 
       case ButtonVariant.icon:
@@ -105,18 +105,44 @@ class CustomButton extends StatelessWidget {
             ),
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(text, style: TextStyle(color: theme.colorScheme.primary)),
-              if (icon != null) ...[
-                const SizedBox(width: 8),
-                IconTheme(
-                  data: IconThemeData(color: theme.colorScheme.primary),
-                  child: icon!,
-                ),
-              ],
-            ],
+          child: Builder(
+            builder: (context) {
+              final isRtl = Directionality.of(context) == TextDirection.rtl;
+              return Row(
+                mainAxisSize: MainAxisSize.min,
+                children: isRtl
+                    ? [
+                        if (icon != null) ...[
+                          IconTheme(
+                            data: IconThemeData(
+                              color: theme.colorScheme.primary,
+                            ),
+                            child: icon!,
+                          ),
+                          const SizedBox(width: 8),
+                        ],
+                        Text(
+                          text,
+                          style: TextStyle(color: theme.colorScheme.primary),
+                        ),
+                      ]
+                    : [
+                        Text(
+                          text,
+                          style: TextStyle(color: theme.colorScheme.primary),
+                        ),
+                        if (icon != null) ...[
+                          const SizedBox(width: 8),
+                          IconTheme(
+                            data: IconThemeData(
+                              color: theme.colorScheme.primary,
+                            ),
+                            child: icon!,
+                          ),
+                        ],
+                      ],
+              );
+            },
           ),
         );
 
@@ -129,12 +155,12 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(radius),
             ),
           ),
-          child: _buildContent(theme.colorScheme.primary),
+          child: _buildContent(context, theme.colorScheme.primary),
         );
     }
   }
 
-  Widget _buildContent(Color textColor) {
+  Widget _buildContent(BuildContext context, Color textColor) {
     if (isLoading) {
       return SizedBox(
         height: 20,
@@ -146,13 +172,18 @@ class CustomButton extends StatelessWidget {
       );
     }
 
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-
-      children: [
-        if (icon != null) ...[icon!, SizedBox(width: AppSizes.s8)],
-        Text(text),
-      ],
+      children: isRtl
+          ? [
+              if (icon != null) ...[icon!, SizedBox(width: AppSizes.s8)],
+              Text(text, style: TextStyle(color: textColor)),
+            ]
+          : [
+              Text(text, style: TextStyle(color: textColor)),
+              if (icon != null) ...[SizedBox(width: AppSizes.s8), icon!],
+            ],
     );
   }
 }

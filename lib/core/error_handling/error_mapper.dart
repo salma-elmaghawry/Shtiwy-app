@@ -42,11 +42,18 @@ class ErrorMapper {
         );
       }
 
+      if (code == 'anonymous_provider_disabled' ||
+          msg.contains('anonymous sign-ins are disabled')) {
+        return InvalidCredentialsFailure(
+          message: 'auth.errors.anonymous_sign_in'.tr(),
+        );
+      }
+
       if (msg.contains('network')) {
         return NetworkFailure(message: 'errors.network_error'.tr());
       }
 
-      return UnexpectedFailure(message: error.message);
+      return UnexpectedFailure(message: 'errors.unexpected_error'.tr());
     }
 
     if (error is supabase.PostgrestException) {

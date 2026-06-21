@@ -16,7 +16,8 @@
             "rate_limit_exceeded": "Too many requests. Please wait a while before trying again",
             "invalid_otp": "Token has expired or is invalid",
             "unexpected_error": "An unexpected error occurred",
-            "email_not_confirmed": "Email not confirmed"
+            "email_not_confirmed": "Email not confirmed",
+            "anonymous_sign_in": "Please enter your email to continue"
         },
         "login": {
             "title": "Welcome Back",
@@ -32,7 +33,8 @@
             "forgot_password": "Forgot Password?",
             "login_button": "Login",
             "no_account": "Don't have an account?",
-            "signup_link": "Sign Up"
+            "signup_link": "Sign Up",
+            "success": "Logged in successfully"
         },
         "signup": {
             "title": "Create Account",
@@ -52,25 +54,25 @@
             "role_student_desc": "Access courses and learning materials",
             "role_tutor": "Manager",
             "role_tutor_desc": "Manage courses and content",
-            "role_required_error": "Please select whether you are a User or a Manager"
-               ,
-               "phone_label": "Phone Number",
-               "phone_hint": "Enter your phone number",
-               "country_label": "Country",
-               "country_hint": "Select your country",
-               "location_label": "Location",
-               "location_hint": "Choose your location on map",
-               "location_search_placeholder": "Search places",
-               "location_select_button": "Select location"
+            "role_required_error": "Please select whether you are a User or a Manager",
+            "phone_label": "Phone Number",
+            "phone_hint": "Enter your phone number",
+            "country_label": "Country",
+            "country_hint": "Select your country",
+            "location_label": "Location",
+            "location_hint": "Choose your location on map",
+            "location_search_placeholder": "Search places",
+            "location_select_button": "Select location"
         },
         "otp": {
             "title": "Email Verification",
-            "subtitle": "We've sent an 8-digit code to verify your email",
+            "subtitle": "We've sent an 6-digit code to verify your email",
             "verify_button": "Verify",
             "resend": "Resend Code",
             "didnt_receive": "Didn't receive code?",
-            "invalid_otp": "Please enter a valid 8-digit verification code",
-            "success": "Email verified successfully"
+            "invalid_otp": "Please enter a valid 6-digit verification code",
+            "success": "Email verified successfully",
+            "otp_resent": "Verification code resent successfully"
         },
         "password_strength": {
             "weak": "Weak Password",
@@ -97,8 +99,15 @@
         "my_students_desc": "Manage and assist your enrolled students",
         "analytics": "Performance Analytics",
         "analytics_desc": "Track your ratings, feedback, and sales"
-    }
-    ,
+    },
+    "errors": {
+        "network_error": "Network error. Please check your connection",
+        "server_error": "Server error. Please try again later",
+        "unexpected_error": "An unexpected error occurred. Please try again"
+    },
+    "actions": {
+        "continue": "Continue"
+    },
     "onboarding": {
         "skip": "Skip",
         "next": "Next",
@@ -115,5 +124,51 @@
             "title": "Your Trip, Perfectly Planned",
             "desc": "Manage bookings, organize your trip plans, and enjoy a smooth travel experience with Shtiwy every step of the way."
         }
+    },
+    "home": {
+        "nav_home": "Home",
+        "nav_trips": "My Trips",
+        "nav_bookings": "Bookings",
+        "nav_contact": "Contact",
+        "welcome": "Welcome",
+        "hajj_offers": "Hajj Offers",
+        "umrah_trips": "Umrah Trips",
+        "external_tourism": "External Tourism",
+        "latest_offers": "Latest Offers",
+        "view_all": "View All",
+        "hajj_1447": "Hajj Trips 1447 AH",
+        "hajj_subtitle": "Plan your sacred journey with Shtiwy Tourism. We offer premium packages for pilgrims.",
+        "book_now": "Book Now",
+        "announcement": "Official: Crescent of Dhu al-Hijjah Sighted",
+        "subscribe_title": "Be the first to know",
+        "subscribe_desc": "Subscribe to receive the latest updates, Hajj, Umrah and external trip offers",
+        "email_placeholder": "Email Address",
+        "subscribe_btn": "Subscribe",
+        "trip_details": "Trip Details",
+        "discount_badge": "{discount}% Off",
+        "nights": "{count} Nights",
+        "stars": "{count} Stars",
+        "nav_packages": "Packages",
+        "nav_booking": "Booking",
+        "nav_settings": "Settings"
+    },
+    "settings": {
+        "title": "Settings",
+        "subtitle": "Personalize your spiritual experience.",
+        "appearance": "APPEARANCE",
+        "dark_mode": "Dark Mode",
+        "dark_mode_desc": "Switch between light and dark",
+        "localization": "LOCALIZATION",
+        "language": "Language",
+        "language_desc": "Current: {lang}",
+        "assistance": "ASSISTANCE",
+        "help_support": "Help & Support",
+        "help_support_desc": "FAQs and live chat",
+        "about": "About Shtiwy",
+        "about_desc": "Version 2.4.0",
+        "sign_out": "Sign Out",
+        "select_language": "Select Language",
+        "sign_out_confirm": "Are you sure you want to sign out?",
+        "cancel": "Cancel"
     }
 }

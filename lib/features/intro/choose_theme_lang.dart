@@ -190,9 +190,13 @@ class _LanguageThemeSelectionPageState
                 borderRadius: AppSizes.rXL24,
                 width: 220.w,
                 height: 35.h,
-                text: 'Continue',
+                text: 'actions.continue'.tr(),
                 variant: ButtonVariant.icon,
-                icon: const Icon(Icons.arrow_forward),
+                icon: Icon(
+                  context.locale.languageCode == 'ar'
+                      ? Icons.arrow_back
+                      : Icons.arrow_forward,
+                ),
                 onPressed: _saveAndContinue,
               ).fadeInScale(delay: const Duration(milliseconds: 300)),
               verticalSpace(40),

@@ -2,11 +2,14 @@ import 'package:shtiwy/core/bloc/base_bloc.dart';
 import 'package:shtiwy/core/error_handling/failures.dart';
 import 'package:shtiwy/features/auth/domain/entities/user.dart';
 
+enum AuthAction { login, signUp, verifyOTP, resendOTP, signOut, checkStatus }
+
 class AuthStates extends BaseState {
   final User? user;
   final bool isAuthenticated;
   final bool isEmailVerified;
   final Failure? failure;
+  final AuthAction? action;
 
   const AuthStates({
     super.status = Status.initial,
@@ -15,6 +18,7 @@ class AuthStates extends BaseState {
     this.isAuthenticated = false,
     this.isEmailVerified = false,
     this.failure,
+    this.action,
   });
 
   AuthStates copyWith({
@@ -24,6 +28,7 @@ class AuthStates extends BaseState {
     bool? isAuthenticated,
     bool? isEmailVerified,
     Failure? failure,
+    AuthAction? action,
   }) {
     return AuthStates(
       status: status ?? this.status,
@@ -32,6 +37,7 @@ class AuthStates extends BaseState {
       isAuthenticated: isAuthenticated ?? this.isAuthenticated,
       isEmailVerified: isEmailVerified ?? this.isEmailVerified,
       failure: failure ?? this.failure,
+      action: action ?? this.action,
     );
   }
 
@@ -43,5 +49,6 @@ class AuthStates extends BaseState {
     isAuthenticated,
     isEmailVerified,
     failure,
+    action,
   ];
 }

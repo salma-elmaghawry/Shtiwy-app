@@ -39,6 +39,9 @@ class AppSizes {
   // Input Heights
   static double get inputHeight56 => 56.h;
 
+  //height from top of all screens
+  static double get screenTopHeight40 => 40.h;
+
   // Padding & Margin helpers
   static double get screenPadding16 => 16.w;
   static double get screenPadding24 => 24.w;
