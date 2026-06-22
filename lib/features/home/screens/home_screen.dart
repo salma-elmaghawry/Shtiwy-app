@@ -19,6 +19,8 @@ import 'package:shtiwy/features/home/widgets/latest_offer_header.dart';
 import 'package:shtiwy/features/home/widgets/offer_card.dart';
 import 'package:shtiwy/features/home/widgets/secondary_offer_card.dart';
 import 'package:shtiwy/core/widgets/app_header.dart';
+import 'package:url_launcher/url_launcher.dart'
+    show canLaunchUrl, launchUrl, LaunchMode;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,6 +31,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  Future<void> openWhatsApp() async {
+    final Uri url = Uri.parse(
+      'https://wa.me/201003300351?text=${Uri.encodeComponent("السلام عليكم، أريد الاستفسار عن الرحلات المتاحة")}',
+    );
+
+    await launchUrl(url, mode: LaunchMode.externalApplication);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,14 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
             floatingActionButton: _currentIndex == 0
                 ? FloatingActionButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('جاري الاتصال عبر واتساب...'),
-                          backgroundColor: Colors.green,
-                        ),
-                      );
-                    },
+                    onPressed: openWhatsApp,
                     backgroundColor: const Color(0xFF25D366),
                     child: const Icon(Icons.chat, color: Colors.white),
                   )

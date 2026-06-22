@@ -38,7 +38,7 @@ Widget buildHeader(BuildContext context) {
           ),
         ),
         Image.asset(
-          AppImages.onboard2,
+          AppImages.chatbot,
           width: AppSizes.iconXL48,
           height: AppSizes.iconXL48,
         ),

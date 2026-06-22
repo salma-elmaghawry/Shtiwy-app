@@ -6,8 +6,12 @@ class AppImages {
   static const String onboard2 = "assets/images/onboarding/2.png";
   static const String onboard3 = "assets/images/onboarding/3.png";
 
+// chatbot
+  static const String chatbot = "assets/images/chatbot.png";
+
   static const String Umrah1 = "assets/images/umrah1.png";
   static const String Umrah2 = "assets/images/umrah2.png";
+
   //hotes
-  static const String hotel1 = "assets/images/hotels/hotel_L_1.png";
+  static const String hotel1 = "assets/images/hotels/hotel.png";
 }
