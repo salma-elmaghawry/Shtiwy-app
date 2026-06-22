@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:shtiwy/core/resources/app_images.dart';
+import 'package:shtiwy/core/theme/app_colors.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
+import 'package:shtiwy/core/utils/app_text_styles.dart';
+
+Widget buildHeader(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Image.asset(
+          AppImages.appLogo,
+          width: AppSizes.iconXL48,
+          height: AppSizes.iconXL48,
+        ),
+        RichText(
+          text: TextSpan(
+            style: AppTextStyles.font20Bold,
+            children: const [
+              TextSpan(
+                text: 'Shtiwy ',
+                style: TextStyle(
+                  color: AppColors.primary,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0.5,
+                ),
+              ),
+              TextSpan(
+                text: "شتيوي",
+                style: TextStyle(
+                  color: AppColors.third,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Image.asset(
+          AppImages.onboard2,
+          width: AppSizes.iconXL48,
+          height: AppSizes.iconXL48,
+        ),
+      ],
+    ),
+  );
+}
