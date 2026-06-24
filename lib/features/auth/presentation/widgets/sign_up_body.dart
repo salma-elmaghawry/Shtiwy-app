@@ -65,8 +65,8 @@ class _SignUpBodyState extends State<SignUpBody> {
           child: Scaffold(
             body: SingleChildScrollView(
               padding: EdgeInsets.symmetric(
-                horizontal: AppSizes.l24,
-                vertical: AppSizes.m16,
+                horizontal: AppSizes.screenPadding24,
+                vertical: AppSizes.screenPadding24,
               ),
               child: Form(
                 key: _formKey,

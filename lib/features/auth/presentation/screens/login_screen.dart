@@ -12,14 +12,14 @@ import 'package:shtiwy/core/widgets/custom_text_field.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:shtiwy/features/auth/presentation/cubit/auth_state.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
 
   final _emailController = TextEditingController();
@@ -68,8 +68,8 @@ class _LoginPageState extends State<LoginPage> {
             body: Center(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(
-                  horizontal: AppSizes.l24,
-                  vertical: AppSizes.m16,
+                  horizontal: AppSizes.screenPadding24,
+                  vertical: AppSizes.screenPadding24,
                 ),
                 child: Form(
                   key: _formKey,
@@ -79,13 +79,14 @@ class _LoginPageState extends State<LoginPage> {
                       verticalSpace(AppSizes.screenTopHeight40),
                       const AnimatedLogo(),
 
-                      verticalSpace(AppSizes.m16),
+                      verticalSpace(AppSizes.xl32),
                       Text(
                         'auth.login.title'.tr(),
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.displaySmall
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
+                      verticalSpace(AppSizes.s8),
                       Text(
                         'auth.login.subtitle'.tr(),
                         textAlign: TextAlign.center,
@@ -93,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                           context,
                         ).textTheme.bodyMedium?.copyWith(color: Colors.grey),
                       ),
-                      SizedBox(height: AppSizes.xl32),
+                      SizedBox(height: AppSizes.l24),
                       CustomTextField(
                         controller: _emailController,
                         label: 'auth.login.email_label'.tr(),
@@ -127,12 +128,12 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: AppSizes.l24),
+                      SizedBox(height: AppSizes.m16),
                       CustomButton(
                         text: 'auth.login.login_button'.tr(),
                         onPressed: state.isLoading ? null : _handleLogin,
                       ),
-                      SizedBox(height: AppSizes.xl32),
+                      SizedBox(height: AppSizes.m16),
                       Wrap(
                         alignment: WrapAlignment.center,
                         crossAxisAlignment: WrapCrossAlignment.center,

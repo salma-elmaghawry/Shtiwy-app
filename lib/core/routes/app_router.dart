@@ -4,7 +4,7 @@ import 'package:shtiwy/features/booking/screens/booking_screen.dart';
 import 'package:shtiwy/features/intro/choose_theme_lang.dart';
 import 'package:shtiwy/features/intro/splash_page.dart';
 import 'package:shtiwy/features/intro/onboarding_page.dart';
-import 'package:shtiwy/features/auth/presentation/screens/login_page.dart';
+import 'package:shtiwy/features/auth/presentation/screens/login_screen.dart';
 import 'package:shtiwy/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:shtiwy/features/auth/presentation/screens/otp_screen.dart';
 import 'package:shtiwy/features/home/screens/home_screen.dart';
@@ -23,7 +23,7 @@ class AppRouter {
           builder: (_) => const LanguageThemeSelectionPage(),
         );
       case Routes.login:
-        return MaterialPageRoute(builder: (_) => const LoginPage());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       case Routes.signUp:
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       case Routes.otpVerification:
