@@ -8,10 +8,6 @@ import 'package:shtiwy/core/utils/app_text_styles.dart';
 
 Widget buildHeroBanner(BuildContext context) {
   return Container(
-    margin: EdgeInsets.symmetric(
-      horizontal: AppSizes.screenPadding16,
-      vertical: AppSizes.screenPadding16,
-    ),
     height: 240.h,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(AppSizes.rL16),

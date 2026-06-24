@@ -41,8 +41,9 @@ class AppSizes {
 
   //height from top of all screens
   static double get screenTopHeight40 => 40.h;
-
+  static double get screenTopHeight20 => 20.h;
   // Padding & Margin helpers
+  static double get screenPadding8 => 8.w;
   static double get screenPadding16 => 16.w;
   static double get screenPadding24 => 24.w;
   static double get screenPadding32 => 32.w;

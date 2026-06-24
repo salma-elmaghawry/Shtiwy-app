@@ -1,5 +1,7 @@
 {
     "app_name": "شتيوى",
+    "app_header_1": "شِتوي ",
+    "app_header_2": "للرحلات",
     "login": "تسجيل الدخول",
     "welcome": "أهلاً بك",
     "preferences": {

@@ -1,5 +1,7 @@
 {
     "app_name": "Shtiwy",
+    "app_header_1": "Shtiwy ",
+    "app_header_2": "Tours",
     "login": "Login",
     "welcome": "Welcome",
     "preferences": {

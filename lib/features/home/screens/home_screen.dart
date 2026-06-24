@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shtiwy/core/helpers/spacing.dart';
 
 import 'package:shtiwy/core/routes/routes.dart';
+import 'package:shtiwy/core/utils/app_sizes.dart';
 import 'package:shtiwy/core/widgets/loading_overlay.dart';
 
 import 'package:shtiwy/features/auth/presentation/cubit/auth_cubit.dart';
@@ -39,6 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
     await launchUrl(url, mode: LaunchMode.externalApplication);
   }
 
+  /// Height the floating navbar occupies so content can pad accordingly.
+  static const double _navBarHeight =
+      88; // 64.h pill + 12.h bottom margin + 12 top buffer
+
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<AuthCubit, AuthStates>(
@@ -60,40 +66,72 @@ class _HomeScreenState extends State<HomeScreen> {
         return LoadingOverlay(
           isLoading: state.isLoading,
           child: Scaffold(
+            // No bottomNavigationBar — navbar floats inside body Stack
             body: SafeArea(
-              child: IndexedStack(
-                index: _currentIndex,
+              child: Stack(
                 children: [
-                  _HomeView(userName: state.user?.name),
+                  // ── Tab content — padded so last items clear the navbar ──
+                  Positioned.fill(
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: _navBarHeight),
+                      child: Stack(
+                        children: [
+                          Offstage(
+                            offstage: _currentIndex != 0,
+                            child: _HomeView(userName: state.user?.name),
+                          ),
+                          Offstage(
+                            offstage: _currentIndex != 1,
+                            child: PackageScreen(),
+                          ),
+                          Offstage(
+                            offstage: _currentIndex != 2,
+                            child: BookingsScreen(),
+                          ),
+                          Offstage(
+                            offstage: _currentIndex != 3,
+                            child: SettingsScreen(embedded: true),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
 
-                  PackageScreen(),
+                  // ── Floating navbar overlapping the content ──────────────
+                  Positioned(
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    child: CustomBottomNavBar(
+                      currentIndex: _currentIndex,
+                      onTap: (index) => setState(() => _currentIndex = index),
+                    ),
+                  ),
 
-                  BookingsScreen(),
-
-                  SettingsScreen(embedded: true),
+                  // ── WhatsApp FAB (home tab only) ─────────────────────────
+                  // Home tab is the FIRST item → leftmost in LTR, rightmost in RTL.
+                  // FAB must go on the OPPOSITE end so they never overlap.
+                  if (_currentIndex == 0)
+                    Builder(
+                      builder: (context) {
+                        final isRtl =
+                            Directionality.of(context) == TextDirection.LTR;
+                        return Positioned(
+                          bottom: _navBarHeight + 15,
+                          // LTR → FAB on right; RTL → FAB on left
+                          left: isRtl ? 20 : null,
+                          right: isRtl ? null : 20,
+                          child: FloatingActionButton(
+                            heroTag: 'whatsapp_fab',
+                            onPressed: openWhatsApp,
+                            backgroundColor: const Color(0xFF25D366),
+                            child: const Icon(Icons.chat, color: Colors.white),
+                          ),
+                        );
+                      },
+                    ),
                 ],
               ),
-            ),
-
-            floatingActionButton: _currentIndex == 0
-                ? FloatingActionButton(
-                    onPressed: openWhatsApp,
-                    backgroundColor: const Color(0xFF25D366),
-                    child: const Icon(Icons.chat, color: Colors.white),
-                  )
-                : null,
-
-            floatingActionButtonLocation: context.locale.languageCode == 'ar'
-                ? FloatingActionButtonLocation.endFloat
-                : FloatingActionButtonLocation.startFloat,
-
-            bottomNavigationBar: CustomBottomNavBar(
-              currentIndex: _currentIndex,
-              onTap: (index) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
             ),
           ),
         );
@@ -109,29 +147,42 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        buildHeader(context),
+    return Padding(
+      padding: EdgeInsets.all(AppSizes.screenPadding8),
+      child: Column(
+        children: [
+          buildHeader(context),
 
-        Expanded(
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            children: [
-              buildHeroBanner(context),
+          Expanded(
+            child: ListView(
+              physics: const AlwaysScrollableScrollPhysics(
+                parent: BouncingScrollPhysics(),
+              ),
+              cacheExtent: 300,
+              children: [
+                buildHeroBanner(context),
+                verticalSpace(16),
 
-              buildCategoryRow(context),
+                buildCategoryRow(context),
 
-              buildLatestOffersHeader(context),
+                verticalSpace(10),
 
-              buildFeaturedOfferCard(context),
+                buildLatestOffersHeader(context),
 
-              buildSecondaryOffersRow(context),
+                verticalSpace(10),
 
-              const SizedBox(height: 24),
-            ],
+                buildFeaturedOfferCard(context),
+
+                verticalSpace(20),
+
+                buildSecondaryOffersRow(context),
+
+                const SizedBox(height: 24),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
