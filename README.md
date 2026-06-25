@@ -83,5 +83,3 @@ For support, please open an issue on GitHub or contact us at support@shitawy.com
 - Google Fonts for typography
 
 ---
-
-**Shitawy**: اداره رحلات الحج والعمره وكده
