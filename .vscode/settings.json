@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "/Users/salmaelmaghawry/development/Projects/Clients/Shtiwy/Shtiwy-app/windows"
+    "cmake.sourceDirectory": "/Users/salmaelmaghawry/development/Projects/Clients/Shtiwy/Shtiwy-app/windows",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
