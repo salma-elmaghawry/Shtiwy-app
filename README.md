@@ -1,7 +1,8 @@
+
 # Shtiwy App 
 Shtiwy is your ultimate travel companion, offering personalized itineraries, real-time updates, and seamless booking for an unforgettable travel experience.
 
-https://github.com/user-attachments/assets/bcaced5a-c79c-499a-98d8-7e8392225f03
+https://github.com/user-attachments/assets/7e339e87-6490-47ef-a781-6ee170ea172c
 
 
 ## Project Structure
