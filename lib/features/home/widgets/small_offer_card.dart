@@ -20,8 +20,11 @@ Widget buildSmallOfferCard(
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Image.asset(
+        // Fixed-height image — avoids Expanded in unbounded Column
+        SizedBox(
+          height: 110,
+          width: double.infinity,
+          child: Image.network(
             imageUrl,
             width: double.infinity,
             fit: BoxFit.cover,
@@ -29,6 +32,19 @@ Widget buildSmallOfferCard(
               return Container(
                 color: AppColors.grey300,
                 child: const Center(child: Icon(Icons.image)),
+              );
+            },
+            loadingBuilder: (context, child, progress) {
+              if (progress == null) return child;
+              return Container(
+                color: AppColors.grey200,
+                child: const Center(
+                  child: SizedBox(
+                    width: 20,
+                    height: 20,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                ),
               );
             },
           ),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:shtiwy/core/resources/app_images.dart';
 import 'package:shtiwy/core/theme/app_colors.dart';
@@ -18,18 +19,18 @@ Widget buildHeader(BuildContext context) {
         RichText(
           text: TextSpan(
             style: AppTextStyles.font20Bold,
-            children: const [
+            children: [
               TextSpan(
-                text: 'Shtiwy ',
-                style: TextStyle(
+                text: 'app_header_1'.tr(),
+                style: const TextStyle(
                   color: AppColors.primary,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 0.5,
                 ),
               ),
               TextSpan(
-                text: "شتيوي",
-                style: TextStyle(
+                text: 'app_header_2'.tr(),
+                style: const TextStyle(
                   color: AppColors.third,
                   fontWeight: FontWeight.bold,
                 ),

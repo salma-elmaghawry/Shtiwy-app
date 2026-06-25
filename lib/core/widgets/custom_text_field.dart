@@ -119,7 +119,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         prefixIcon: widget.prefixIcon,
         suffixIcon: _buildSuffixIcon(),
         filled: true,
-        fillColor: isDark ? AppColors.surfaceDark : AppColors.grey100,
+        fillColor: isDark ? AppColors.surfaceDark : AppColors.grey200,
         contentPadding: EdgeInsets.symmetric(
           horizontal: AppSizes.m16,
           vertical: AppSizes.s8,

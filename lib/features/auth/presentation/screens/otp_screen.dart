@@ -77,7 +77,9 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget _buildOtpContent(BuildContext context, String email) {
     return BlocBuilder<AuthCubit, AuthStates>(
       builder: (context, state) {
-        final resolvedEmail = email.isNotEmpty ? email : (state.user?.email ?? '');
+        final resolvedEmail = email.isNotEmpty
+            ? email
+            : (state.user?.email ?? '');
 
         return LoadingOverlay(
           isLoading: state.isLoading,
@@ -85,8 +87,8 @@ class _OtpScreenState extends State<OtpScreen> {
             body: Center(
               child: SingleChildScrollView(
                 padding: EdgeInsets.symmetric(
-                  horizontal: AppSizes.l24,
-                  vertical: AppSizes.m16,
+                  horizontal: AppSizes.screenPadding24,
+                  vertical: AppSizes.screenPadding24,
                 ),
                 child: Form(
                   key: _formKey,
@@ -114,7 +116,8 @@ class _OtpScreenState extends State<OtpScreen> {
                         isVerifying: state.isLoading,
                         isError: state.isFailure,
                         isSuccess: state.isSuccess && state.isEmailVerified,
-                        onCompleted: (otp) => _handleVerifyOtp(context, resolvedEmail),
+                        onCompleted: (otp) =>
+                            _handleVerifyOtp(context, resolvedEmail),
                       ),
                       SizedBox(height: AppSizes.xxl48),
                       CustomButton(
@@ -143,7 +146,9 @@ class _OtpScreenState extends State<OtpScreen> {
                                 );
                                 return;
                               }
-                              context.read<AuthCubit>().resendOTP(email: resolvedEmail);
+                              context.read<AuthCubit>().resendOTP(
+                                email: resolvedEmail,
+                              );
                             },
                             child: Text(
                               'auth.otp.resend'.tr(),
@@ -182,7 +187,9 @@ class _OtpScreenState extends State<OtpScreen> {
     if (email.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Email address is missing. Please try signing up again.'),
+          content: Text(
+            'Email address is missing. Please try signing up again.',
+          ),
           backgroundColor: Colors.red,
         ),
       );
